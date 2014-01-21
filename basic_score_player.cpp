@@ -169,7 +169,7 @@ int score2(const Game::wall_type& wall) {
   return ordered;
 }
 
-int score(const Game::wall_type& wall) {
+int score3(const Game::wall_type& wall) {
   int score = 0;
   for(int i = 0; i < wall.size(); i++) {
     for(int j = 0; j < wall.size(); j++) {

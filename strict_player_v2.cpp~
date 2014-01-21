@@ -12,6 +12,8 @@ int allowed[4][4][2] = {{{99,90},{89,75},{74,60},{59,45}},
 	                      {{74,60},{59,45},{44,30},{29,15}},
 	                      {{59,45},{44,30},{29,15},{14,00}}};
 
+Game::wall_type lwall;
+
 /** Pretty print a game wall */
 void print_wall(const Game::wall_type& s)
 {

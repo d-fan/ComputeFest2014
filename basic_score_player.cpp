@@ -100,7 +100,7 @@ std::string choose_coord(const Game::wall_type& wall,
       Game::wall_type temp = wall;
       temp[i][j] = brick;
       int temp_score = score(temp);
-      if (temp_score > best[3]) {
+      if (temp_score > best[2]) {
         best[0] = i;
         best[1] = j;
         best[2] = temp_score;
@@ -157,11 +157,11 @@ w[i+1][j] - w[i][j]
 
 */
 
-int score2(const Game::wall_type& wall) {
+int score3(const Game::wall_type& wall) {
   // Count how many elements are in order
   int ordered = 0;
-  for(int i = 0; i < wall.size() - 1; i++) {
-    for(int j = 0; j < wall.size() - 1; j++) {
+  for(int i = 0; i < wall.size(); i++) {
+    for(int j = 0; j < wall.size(); j++) {
       if (wall[i][j] > wall[i+1][j]) ordered++;
       if (wall[i][j] > wall[i][j+1]) ordered++;
     }
@@ -169,7 +169,7 @@ int score2(const Game::wall_type& wall) {
   return ordered;
 }
 
-int score3(const Game::wall_type& wall) {
+int score2(const Game::wall_type& wall) {
   int score = 0;
   for(int i = 0; i < wall.size(); i++) {
     for(int j = 0; j < wall.size(); j++) {
@@ -180,7 +180,35 @@ int score3(const Game::wall_type& wall) {
   return -score;
 }
 
+int score(const Game::wall_type& wall) {
+  int counter = 0;
+  for(int i = 0; i < wall.size(); i++) {
+    for(int j = 0; j < wall.size(); j++) {
+      for(int m = i; m < wall.size(); m++) {
+        for(int n = j; n < wall.size(); n++) {
+          if(wall[m][n] > wall[i][j]) counter++;
+        }
+      }
+    }
+  }
+  return -counter;
+}
 
+
+
+int score4(const Game::wall_type& wall) {
+  int counter = 0;
+  for(int i = 0; i < wall.size(); i++) {
+    for(int j = 0; j < wall.size(); j++) {
+      for(int m = i; m < wall.size(); m++) {
+        for(int n = j; n < wall.size(); n++) {
+          if(wall[m][n] > wall[i][j]) counter += wall[i][j] - wall[m][n];
+        }
+      }
+    }
+  }
+  return counter;
+}
 
 
 

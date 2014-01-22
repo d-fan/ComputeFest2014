@@ -18,6 +18,8 @@ const double opt_arr[4][4] = {{0.0,9.9,26.4,48.5},
 Game::wall_type lwall;
 bool initialized = false;
 int score(const Game::wall_type& wall);
+int* calculate_draw (const Game::wall_type& wall, int i);
+int calculate_random_draw (const Game::wall_type& wall);
 
 /** Pretty print a game wall */
 void print_wall(const Game::wall_type& s, bool highlight = false)
@@ -69,18 +71,19 @@ std::string choose_discard_or_pile(const Game::wall_type& wall,
   lwall = owall;
   initialized = true;
 
-  // Check if board score can be increased with discard_brick
+  // Check if board score can be increased more than random with the discard
   for (int i = 0; i < wall.size(); i++) {
     for (int j = 0; j < wall.size(); j++) {
       Game::wall_type temp = wall;
       temp[i][j] = discard_brick;
-      if(score(temp) > score(wall)) {
-        std::cout << "Found improvement" << std::endl;
+      if (score(temp) > calculate_random_draw(wall)) 
+	{
+        std::cout << "Better than random" << std::endl;
         return "d";
       }
     }
   }
-  std::cout << "Found no improvement. Drawing" << std::endl;
+  std::cout << "Worse than random. Drawing" << std::endl;
   return "p";
 }
 
@@ -103,6 +106,19 @@ std::string choose_coord(const Game::wall_type& wall,
                          const Game::wall_type& owall,
                          int brick)
 {
+  int* min_info = calculate_draw(wall, brick);
+  Game::wall_type temp = wall;
+  temp[min_info[1]][min_info[2]] = brick;
+  if (score(wall) > score(temp))
+    {
+      return "bad_brick";
+    }
+  else
+    {
+        std::cout << "Replacing " << wall[min_info[0]][min_info[1]] << " at " << char('A' + min_info[0]) << min_info[1] << " with " << brick << std::endl;
+  return rowcol2coord(min_info[0], min_info[1]);
+    }
+  /*
   int best[3] = {-1,-1,INT_MIN};
   for(int i = 0; i < wall.size(); i++) {
     for(int j = 0; j < wall.size(); j++) {
@@ -116,9 +132,7 @@ std::string choose_coord(const Game::wall_type& wall,
       }
     }
   }
-  if (best[0] < 0 || best[1] < 0) return "-1";
-  std::cout << "Replacing " << wall[best[0]][best[1]] << " at " << char('A' + best[0]) << best[1] << " with " << brick << std::endl;
-  return rowcol2coord(best[0], best[1]);
+  */
 }
 
 
@@ -153,18 +167,6 @@ int main(int argc, char** argv)
 
   return 0;
 }
-
-/*
-
-Rough idea:
-45 30 15 00
-60
-75
-99
-
-w[i+1][j] - w[i][j]
-
-*/
 
 int score3(const Game::wall_type& wall) {
   // Count how many elements are in order
@@ -226,7 +228,7 @@ double opt_arr_addition(const Game::wall_type& wall)
     {
       for(int j=0;j<wall.size();j++)
 	{
-	  penalizer += abs(wall[i][j]-opt_arr[i][j]);
+	  penalizer += abs(wall[i][j] - opt_arr[i][j]);
 	}
     }
   return penalizer;
@@ -237,29 +239,42 @@ int score(const Game::wall_type& wall)
   return -(counter_score(wall) + (int)(opt_arr_addition(wall)*counter_score(wall)/DIVISOR));
 }
 
+int* calculate_draw (const Game::wall_type& wall, int i)
+{
+  int brick_val = i;
+  Game::wall_type temp_init = wall;
+  temp_init[0][0]=brick_val;
+  int min_score = score(temp_init);
+  Game::wall_type temp = wall;
+  int min_j = 0;
+  int min_k = 0;
+  for (int j = 0;j<wall.size();j++)
+    {
+      for (int k = 0; k<wall.size();k++)
+	{
+	  temp[i][j] = brick_val;
+	  int scr = score(temp);
+	  if (scr < min_score)
+	    {
+	      min_score = scr;
+	      min_j = j;
+	      min_k = k;
+	    }
+	}
+    }
+  int* min_arr = new int[3]; 
+  min_arr[0] = min_j;
+  min_arr[1] = min_k;
+  min_arr[2] = min_score;
+  return min_arr;
+}
+
 int calculate_random_draw (const Game::wall_type& wall)
 {
   int total_score = 0;
   for (int i = 0; i<99;i++)
     {
-      int brick_val = i;
-      Game::wall_type temp_init = wall;
-      temp_init[0][0]=brick_val;
-      int min_score = score(temp_init);
-      Game::wall_type temp = wall;
-      for (int j = 0;j<wall.size();j++)
-	{
-	  for (int k = 0; k<wall.size();k++)
-	    {
-	      temp[i][j] = brick_val;
-	      int scr = score(temp);
-	      if (scr < min_score)
-		{
-		  min_score = scr;
-		}
-	    }
-	}
-      total_score += min_score;
+      total_score += calculate_draw (wall, i)[2];
     }
   return (double) total_score/100.;
 }

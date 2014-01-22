@@ -1,0 +1,1623 @@
+Waiting for game asdf
+READY
+
+Opponent (counter 49, optimal 653, score -65.2999):
+66  93  97  13  
+11  75  32  68  
+30  37  38  90  
+51  95   3  17  
+
+My Wall (counter 51, optimal 607, score -60.7):
+29   4  96  14  
+48   2  77  53  
+21  73  76  67  
+18  44  47  31  
+Found improvement
+Replacing 18 at A0 with 80
+
+Opponent (counter 46, optimal 598, score -59.7998):
+66  93  97  13  
+11  75  32  68  
+30  37  38  18  
+51  95   3  17  
+
+My Wall (counter 40, optimal 545, score -54.4951):
+29   4  96  14  
+48   2  77  53  
+21  73  76  67  
+80  44  47  31  
+Found improvement
+Replacing 21 at B0 with 90
+
+Opponent (counter 37, optimal 522, score -52.1772):
+66  93  21  13  
+11  75  32  68  
+30  37  38  18  
+51  95   3  17  
+
+My Wall (counter 34, optimal 477, score -47.6083):
+29   4  96  14  
+48   2  77  53  
+90  73  76  67  
+80  44  47  31  
+Found improvement
+Replacing 44 at A1 with 97
+
+Opponent (counter 34, optimal 473, score -47.211):
+66  44  21  13  
+11  75  32  68  
+30  37  38  18  
+51  95   3  17  
+
+My Wall (counter 28, optimal 439, score -42.0047):
+29   4  96  14  
+48   2  77  53  
+90  73  76  67  
+80  97  47  31  
+Found improvement
+Replacing 47 at A2 with 93
+
+Opponent (counter 28, optimal 429, score -41.1239):
+66  44  21  13  
+11  75  32  68  
+30  37  38  18  
+51  95  47  17  
+
+My Wall (counter 25, optimal 434, score -36.4533):
+29   4  96  14  
+48   2  77  53  
+90  73  76  67  
+80  97  93  31  
+Found improvement
+Replacing 96 at D2 with 3
+
+Opponent (counter 24, optimal 384, score -31.2):
+66  44  21  13  
+11  75  32  68  
+30  37  38  18  
+96  95  47  17  
+
+My Wall (counter 17, optimal 354, score -17.5393):
+29   4   3  14  
+48   2  77  53  
+90  73  76  67  
+80  97  93  31  
+Found improvement
+Replacing 2 at C1 with 51
+
+Opponent (counter 23, optimal 373, score -28.3988):
+66  44  21   2  
+11  75  32  68  
+30  37  38  18  
+96  95  47  17  
+
+My Wall (counter 15, optimal 310, score -15.1758):
+29   4   3  14  
+48  51  77  53  
+90  73  76  67  
+80  97  93  31  
+Found improvement
+Replacing 53 at C3 with 13
+
+Opponent (counter 21, optimal 357, score -23.6817):
+66  44  21   2  
+11  75  32  68  
+30  53  38  18  
+96  95  47  17  
+
+My Wall (counter 13, optimal 270, score -13.057):
+29   4   3  14  
+48  51  77  13  
+90  73  76  67  
+80  97  93  31  
+Found improvement
+Replacing 77 at C2 with 37
+
+Opponent (counter 16, optimal 300, score -16.2518):
+66  44  21   2  
+77  75  32  68  
+30  53  38  18  
+96  95  47  17  
+
+My Wall (counter 9, optimal 230, score -9.00774):
+29   4   3  14  
+48  51  37  13  
+90  73  76  67  
+80  97  93  31  
+Found improvement
+Replacing 14 at D3 with 11
+
+Opponent (counter 9, optimal 246, score -9.00862):
+66  44  21   2  
+77  75  32  14  
+30  53  38  18  
+96  95  47  17  
+
+My Wall (counter 8, optimal 227, score -8.00493):
+29   4   3  11  
+48  51  37  13  
+90  73  76  67  
+80  97  93  31  
+Found improvement
+Replacing 48 at C0 with 68
+
+Opponent (counter 10, optimal 236, score -10.0124):
+66  44  21   2  
+77  75  32  14  
+30  53  48  18  
+96  95  47  17  
+
+My Wall (counter 7, optimal 207, score -7.00279):
+29   4   3  11  
+68  51  37  13  
+90  73  76  67  
+80  97  93  31  
+Found improvement
+Replacing 67 at B3 with 38
+
+Opponent (counter 5, optimal 199, score -5.00112):
+66  44  21   2  
+77  75  32  14  
+67  53  48  18  
+96  95  47  17  
+
+My Wall (counter 7, optimal 178, score -7.0022):
+29   4   3  11  
+68  51  37  13  
+90  73  76  38  
+80  97  93  31  
+Found improvement
+Replacing 38 at B3 with 30
+
+Opponent (counter 4, optimal 183, score -4.00065):
+66  44  21   2  
+77  38  32  14  
+67  53  48  18  
+96  95  47  17  
+
+My Wall (counter 6, optimal 170, score -6.00136):
+29   4   3  11  
+68  51  37  13  
+90  73  76  30  
+80  97  93  31  
+Found improvement
+Replacing 93 at A2 with 75
+
+Opponent (counter 3, optimal 164, score -3.00037):
+66  44  21   2  
+77  38  32  14  
+93  53  48  18  
+96  95  47  17  
+
+My Wall (counter 6, optimal 152, score -6.00114):
+29   4   3  11  
+68  51  37  13  
+90  73  76  30  
+80  97  75  31  
+Found improvement
+Replacing 76 at B2 with 67
+
+Opponent (counter 3, optimal 148, score -3.00032):
+66  44  21   2  
+77  38  32  14  
+93  76  48  18  
+96  95  47  17  
+
+My Wall (counter 4, optimal 143, score -4.00047):
+29   4   3  11  
+68  51  37  13  
+90  73  67  30  
+80  97  75  31  
+Found improvement
+Replacing 29 at D0 with 53
+
+Opponent (counter 2, optimal 136, score -2.00019):
+66  44  21   2  
+77  38  32  14  
+93  76  48  18  
+96  95  47  29  
+
+My Wall (counter 4, optimal 128, score -4.0004):
+53   4   3  11  
+68  51  37  13  
+90  73  67  30  
+80  97  75  31  
+Found improvement
+Replacing 4 at D1 with 17
+
+Opponent (counter 2, optimal 137, score -2.0002):
+66  44  21   2  
+77  38  32   4  
+93  76  48  18  
+96  95  47  29  
+
+My Wall (counter 3, optimal 115, score -3.00023):
+53  17   3  11  
+68  51  37  13  
+90  73  67  30  
+80  97  75  31  
+Found improvement
+Replacing 3 at D2 with 14
+
+Opponent (counter 2, optimal 142, score -2.0002):
+66  44  21   2  
+77  38  32   4  
+93  76  48  18  
+96  79  47  29  
+
+My Wall (counter 2, optimal 113, score -2.00016):
+53  17  14  11  
+68  51  37  13  
+90  73  67  30  
+80  97  75  31  
+Found improvement
+Replacing 80 at A0 with 95
+
+Opponent (counter 3, optimal 146, score -3.00032):
+66  44  21   2  
+77  38  32   4  
+93  80  48  18  
+96  79  47  29  
+
+My Wall (counter 1, optimal 98, score -1.00009):
+53  17  14  11  
+68  51  37  13  
+90  73  67  30  
+95  97  75  31  
+Found improvement
+Replacing 97 at A1 with 76
+***WIN***
+Waiting for game asdf
+READY
+
+Opponent (counter 25, optimal 467, score -38.5074):
+27   7   0  15  
+30  10  20  17  
+14  45  80  84  
+76  43  28  41  
+
+My Wall (counter 30, optimal 536, score -52.4807):
+75  78  16  12  
+ 2  21  36  77  
+33  90  81  70  
+85  94   8  87  
+Found improvement
+Replacing 2 at C0 with 44
+
+Opponent (counter 22, optimal 454, score -28.2932):
+27   7   0   2  
+30  10  20  17  
+14  45  80  84  
+76  43  28  41  
+
+My Wall (counter 27, optimal 494, score -45.3137):
+75  78  16  12  
+44  21  36  77  
+33  90  81  70  
+85  94   8  87  
+Found improvement
+Replacing 77 at C3 with 15
+
+Opponent (counter 23, optimal 416, score -30.0223):
+27   7   0   2  
+77  10  20  17  
+14  45  80  84  
+76  43  28  41  
+
+My Wall (counter 22, optimal 432, score -27.7016):
+75  78  16  12  
+44  21  36  15  
+33  90  81  70  
+85  94   8  87  
+Found improvement
+Replacing 78 at D1 with 30
+
+Opponent (counter 19, optimal 352, score -20.2289):
+27   7   0   2  
+77  10  20  17  
+78  45  80  84  
+76  43  28  41  
+
+My Wall (counter 19, optimal 384, score -20.4716):
+75  30  16  12  
+44  21  36  15  
+33  90  81  70  
+85  94   8  87  
+Found improvement
+Replacing 8 at A2 with 14
+
+Opponent (counter 13, optimal 313, score -13.0745):
+27   7   0   2  
+77  10  20  17  
+78  45  80   8  
+76  43  28  41  
+
+My Wall (counter 18, optimal 378, score -18.939):
+75  30  16  12  
+44  21  36  15  
+33  90  81  70  
+85  94  14  87  
+Found improvement
+Replacing 33 at B0 with 84
+
+Opponent (counter 9, optimal 297, score -9.01144):
+27   7   0   2  
+77  10  20  17  
+78  45  33   8  
+76  43  28  41  
+
+My Wall (counter 13, optimal 327, score -13.0802):
+75  30  16  12  
+44  21  36  15  
+84  90  81  70  
+85  94  14  87  
+Found improvement
+Replacing 14 at A2 with 80
+
+Opponent (counter 10, optimal 292, score -10.0175):
+27   7  14   2  
+77  10  20  17  
+78  45  33   8  
+76  43  28  41  
+
+My Wall (counter 9, optimal 276, score -9.01028):
+75  30  16  12  
+44  21  36  15  
+84  90  81  70  
+85  94  80  87  
+Found improvement
+Replacing 12 at D3 with 0
+
+Opponent (counter 10, optimal 287, score -10.017):
+27   7  14   2  
+77  10  20  12  
+78  45  33   8  
+76  43  28  41  
+
+My Wall (counter 9, optimal 264, score -9.00962):
+75  30  16   0  
+44  21  36  15  
+84  90  81  70  
+85  94  80  87  
+Found improvement
+Replacing 87 at A3 with 17
+
+Opponent (counter 10, optimal 278, score -10.0162):
+27   7  14   2  
+77  10  20  12  
+87  45  33   8  
+76  43  28  41  
+
+My Wall (counter 8, optimal 257, score -8.00594):
+75  30  16   0  
+44  21  36  15  
+84  90  81  70  
+85  94  80  17  
+Found improvement
+Replacing 44 at C0 with 78
+
+Opponent (counter 8, optimal 244, score -8.0055):
+27   7  14   2  
+77  44  20  12  
+87  45  33   8  
+76  43  28  41  
+
+My Wall (counter 7, optimal 234, score -7.00334):
+75  30  16   0  
+78  21  36  15  
+84  90  81  70  
+85  94  80  17  
+Found improvement
+Replacing 70 at B3 with 10
+
+Opponent (counter 8, optimal 219, score -8.00466):
+27   7  14   2  
+77  44  20  12  
+87  70  33   8  
+76  43  28  41  
+
+My Wall (counter 7, optimal 207, score -7.00279):
+75  30  16   0  
+78  21  36  15  
+84  90  81  10  
+85  94  80  17  
+Found improvement
+Replacing 21 at C1 with 45
+
+Opponent (counter 7, optimal 205, score -7.00275):
+27  21  14   2  
+77  44  20  12  
+87  70  33   8  
+76  43  28  41  
+
+My Wall (counter 5, optimal 183, score -5.001):
+75  30  16   0  
+78  45  36  15  
+84  90  81  10  
+85  94  80  17  
+Found improvement
+Replacing 15 at C3 with 7
+
+Opponent (counter 6, optimal 231, score -6.00211):
+27  21  14   2  
+77  44  20  12  
+87  70  33   8  
+76  43  28  15  
+
+My Wall (counter 4, optimal 180, score -4.00064):
+75  30  16   0  
+78  45  36   7  
+84  90  81  10  
+85  94  80  17  
+Found improvement
+Replacing 81 at B2 with 41
+
+Opponent (counter 8, optimal 242, score -8.00543):
+81  21  14   2  
+77  44  20  12  
+87  70  33   8  
+76  43  28  15  
+
+My Wall (counter 3, optimal 155, score -3.00034):
+75  30  16   0  
+78  45  36   7  
+84  90  41  10  
+85  94  80  17  
+Found improvement
+Replacing 17 at A3 with 27
+
+Opponent (counter 8, optimal 233, score -8.00513):
+81  21  14   2  
+77  44  20  12  
+87  70  33  17  
+76  43  28  15  
+
+My Wall (counter 3, optimal 145, score -3.00032):
+75  30  16   0  
+78  45  36   7  
+84  90  41  10  
+85  94  80  27  
+Found improvement
+Replacing 16 at D2 with 8
+
+Opponent (counter 8, optimal 232, score -8.0051):
+81  21  14   2  
+77  44  20  12  
+87  70  33  17  
+76  43  28  16  
+
+My Wall (counter 3, optimal 140, score -3.0003):
+75  30   8   0  
+78  45  36   7  
+84  90  41  10  
+85  94  80  27  
+Found improvement
+Replacing 10 at B3 with 15
+
+Opponent (counter 8, optimal 230, score -8.00503):
+81  21  14   2  
+77  44  20  10  
+87  70  33  17  
+76  43  28  16  
+
+My Wall (counter 3, optimal 135, score -3.00029):
+75  30   8   0  
+78  45  36   7  
+84  90  41  15  
+85  94  80  27  
+Found no improvement. Drawing
+Replacing 85 at A0 with 89
+
+Opponent (counter 6, optimal 221, score -6.00199):
+81  21  14   2  
+77  44  20  10  
+87  70  33  17  
+85  43  28  16  
+
+My Wall (counter 3, optimal 131, score -3.00028):
+75  30   8   0  
+78  45  36   7  
+84  90  41  15  
+89  94  80  27  
+Found improvement
+Replacing 90 at B1 with 76
+
+Opponent (counter 5, optimal 216, score -5.00124):
+81  21  14   2  
+77  44  20  10  
+87  70  33  17  
+90  43  28  16  
+
+My Wall (counter 1, optimal 117, score -1.00011):
+75  30   8   0  
+78  45  36   7  
+84  76  41  15  
+89  94  80  27  
+Found improvement
+Replacing 94 at A1 with 85
+***WIN***
+Waiting for game asdf
+READY
+
+Opponent (counter 44, optimal 564, score -56.3994):
+72  52  85  53  
+45   9  65  78  
+67  31  43  84  
+79  66  57  15  
+
+My Wall (counter 45, optimal 600, score -59.9996):
+20  90  36  38  
+ 7  91  88  28  
+ 0  19  49  22  
+70  99  24  76  
+Found improvement
+Replacing 0 at B0 with 96
+
+Opponent (counter 38, optimal 511, score -51.0881):
+72  52  85   0  
+45   9  65  78  
+67  31  43  84  
+79  66  57  15  
+
+My Wall (counter 35, optimal 517, score -51.632):
+20  90  36  38  
+ 7  91  88  28  
+96  19  49  22  
+70  99  24  76  
+Found improvement
+Replacing 7 at C0 with 53
+
+Opponent (counter 29, optimal 445, score -43.3242):
+72  52  85   0  
+45   9  65   7  
+67  31  43  84  
+79  66  57  15  
+
+My Wall (counter 31, optimal 471, score -46.6281):
+20  90  36  38  
+53  91  88  28  
+96  19  49  22  
+70  99  24  76  
+Found improvement
+Replacing 19 at B1 with 78
+
+Opponent (counter 23, optimal 395, score -29.2294):
+72  52  85   0  
+45   9  65   7  
+67  31  43  19  
+79  66  57  15  
+
+My Wall (counter 27, optimal 423, score -39.5089):
+20  90  36  38  
+53  91  88  28  
+96  78  49  22  
+70  99  24  76  
+Found improvement
+Replacing 24 at A2 with 84
+
+Opponent (counter 13, optimal 334, score -13.083):
+72  52  24   0  
+45   9  65   7  
+67  31  43  19  
+79  66  57  15  
+
+My Wall (counter 23, optimal 386, score -28.8896):
+20  90  36  38  
+53  91  88  28  
+96  78  49  22  
+70  99  84  76  
+Found improvement
+Replacing 70 at A0 with 85
+
+Opponent (counter 12, optimal 295, score -12.0433):
+72  52  24   0  
+45   9  65   7  
+67  70  43  19  
+79  66  57  15  
+
+My Wall (counter 20, optimal 371, score -22.0384):
+20  90  36  38  
+53  91  88  28  
+96  78  49  22  
+85  99  84  76  
+Found improvement
+Replacing 88 at C2 with 31
+
+Opponent (counter 11, optimal 274, score -11.0246):
+72  52  24   0  
+45   9  65   7  
+88  70  43  19  
+79  66  57  15  
+
+My Wall (counter 17, optimal 314, score -17.4221):
+20  90  36  38  
+53  91  31  28  
+96  78  49  22  
+85  99  84  76  
+Found improvement
+Replacing 90 at D1 with 67
+
+Opponent (counter 10, optimal 264, score -10.0149):
+72  52  24   0  
+90   9  65   7  
+88  70  43  19  
+79  66  57  15  
+
+My Wall (counter 15, optimal 291, score -15.1549):
+20  67  36  38  
+53  91  31  28  
+96  78  49  22  
+85  99  84  76  
+Found improvement
+Replacing 91 at C1 with 45
+
+Opponent (counter 8, optimal 252, score -8.00577):
+72  52  24   0  
+90   9  65   7  
+88  70  43  19  
+91  66  57  15  
+
+My Wall (counter 13, optimal 252, score -13.0497):
+20  67  36  38  
+53  45  31  28  
+96  78  49  22  
+85  99  84  76  
+Found improvement
+Replacing 20 at D0 with 79
+
+Opponent (counter 7, optimal 220, score -7.00305):
+72  52  24   0  
+90   9  20   7  
+88  70  43  19  
+91  66  57  15  
+
+My Wall (counter 11, optimal 254, score -11.0216):
+79  67  36  38  
+53  45  31  28  
+96  78  49  22  
+85  99  84  76  
+Found improvement
+Replacing 22 at B3 with 65
+
+Opponent (counter 6, optimal 207, score -6.00181):
+72  52  24   0  
+90  22  20   7  
+88  70  43  19  
+91  66  57  15  
+
+My Wall (counter 10, optimal 288, score -10.0171):
+79  67  36  38  
+53  45  31  28  
+96  78  49  65  
+85  99  84  76  
+Found improvement
+Replacing 38 at D3 with 9
+
+Opponent (counter 5, optimal 191, score -5.00106):
+72  52  24   0  
+90  38  20   7  
+88  70  43  19  
+91  66  57  15  
+
+My Wall (counter 7, optimal 259, score -7.00384):
+79  67  36   9  
+53  45  31  28  
+96  78  49  65  
+85  99  84  76  
+Found improvement
+Replacing 67 at D1 with 22
+
+Opponent (counter 5, optimal 190, score -5.00105):
+72  52  24   0  
+90  38  20   7  
+88  70  43  19  
+91  67  57  15  
+
+My Wall (counter 6, optimal 223, score -6.00201):
+79  22  36   9  
+53  45  31  28  
+96  78  49  65  
+85  99  84  76  
+Found improvement
+Replacing 49 at B2 with 66
+
+Opponent (counter 5, optimal 180, score -5.00097):
+72  52  24   0  
+90  49  20   7  
+88  70  43  19  
+91  67  57  15  
+
+My Wall (counter 5, optimal 240, score -5.00142):
+79  22  36   9  
+53  45  31  28  
+96  78  66  65  
+85  99  84  76  
+Found improvement
+Replacing 79 at D0 with 38
+
+Opponent (counter 4, optimal 168, score -4.00058):
+72  52  24   0  
+90  49  20   7  
+88  70  43  19  
+91  79  57  15  
+
+My Wall (counter 4, optimal 220, score -4.00082):
+38  22  36   9  
+53  45  31  28  
+96  78  66  65  
+85  99  84  76  
+Found improvement
+Replacing 53 at C0 with 67
+
+Opponent (counter 4, optimal 165, score -4.00057):
+72  52  24   0  
+90  49  20   7  
+88  70  43  19  
+91  79  60  15  
+
+My Wall (counter 4, optimal 206, score -4.00075):
+38  22  36   9  
+67  45  31  28  
+96  78  66  65  
+85  99  84  76  
+Found improvement
+Replacing 65 at B3 with 57
+
+Opponent (counter 4, optimal 158, score -4.00054):
+65  52  24   0  
+90  49  20   7  
+88  70  43  19  
+91  79  60  15  
+
+My Wall (counter 4, optimal 198, score -4.00072):
+38  22  36   9  
+67  45  31  28  
+96  78  66  57  
+85  99  84  76  
+Found improvement
+Replacing 78 at B1 with 72
+
+Opponent (counter 4, optimal 158, score -4.00054):
+65  52  24   0  
+90  49  20   7  
+88  70  43  19  
+91  79  60  15  
+
+My Wall (counter 4, optimal 193, score -4.00069):
+38  22  36   9  
+67  45  31  28  
+96  72  66  57  
+85  99  84  76  
+Found improvement
+Replacing 76 at A3 with 59
+
+Opponent (counter 3, optimal 134, score -3.00029):
+65  52  24   0  
+90  49  20   7  
+88  70  43  19  
+91  79  60  39  
+
+My Wall (counter 4, optimal 176, score -4.00062):
+38  22  36   9  
+67  45  31  28  
+96  72  66  57  
+85  99  84  59  
+Found improvement
+Replacing 36 at D2 with 15
+
+Opponent (counter 3, optimal 137, score -3.00029):
+65  52  24   0  
+90  49  20   7  
+88  70  43  19  
+91  79  60  36  
+
+My Wall (counter 2, optimal 155, score -2.00023):
+38  22  15   9  
+67  45  31  28  
+96  72  66  57  
+85  99  84  59  
+Found improvement
+Replacing 57 at B3 with 39
+
+Opponent (counter 3, optimal 129, score -3.00027):
+65  52  24   0  
+90  49  20   7  
+88  70  43  19  
+91  87  60  36  
+
+My Wall (counter 2, optimal 137, score -2.0002):
+38  22  15   9  
+67  45  31  28  
+96  72  66  39  
+85  99  84  59  
+Found improvement
+Replacing 96 at B0 with 79
+
+Opponent (counter 3, optimal 124, score -3.00026):
+65  52  24   0  
+90  49  20   7  
+88  70  43  19  
+96  87  60  36  
+
+My Wall (counter 1, optimal 141, score -1.00013):
+38  22  15   9  
+67  45  31  28  
+79  72  66  39  
+85  99  84  59  
+Found improvement
+Replacing 99 at A1 with 91
+
+Opponent (counter 3, optimal 121, score -3.00025):
+65  52  24   0  
+90  49  20   7  
+88  70  43  19  
+99  87  60  36  
+
+My Wall (counter 1, optimal 133, score -1.00012):
+38  22  15   9  
+67  45  31  28  
+79  72  66  39  
+85  91  84  59  
+Found improvement
+Replacing 85 at A0 with 96
+***WIN***
+Waiting for game asdf
+READY
+
+Opponent (counter 34, optimal 356, score -35.5893):
+54  20  62  77  
+98  50  28   2  
+86  64  78  15  
+16  74  57  67  
+
+My Wall (counter 41, optimal 580, score -57.9965):
+83  68  82  75  
+93  88  58   3  
+ 5  19  44  31  
+47  81  89  90  
+Found improvement
+Replacing 5 at B0 with 79
+
+Opponent (counter 23, optimal 284, score -25.0387):
+54  20  62   5  
+98  50  28   2  
+86  64  78  15  
+16  74  57  67  
+
+My Wall (counter 36, optimal 506, score -50.5639):
+83  68  82  75  
+93  88  58   3  
+79  19  44  31  
+47  81  89  90  
+Found improvement
+Replacing 19 at B1 with 77
+
+Opponent (counter 18, optimal 241, score -18.2893):
+54  20  19   5  
+98  50  28   2  
+86  64  78  15  
+16  74  57  67  
+
+My Wall (counter 32, optimal 457, score -45.4536):
+83  68  82  75  
+93  88  58   3  
+79  77  44  31  
+47  81  89  90  
+Found improvement
+Replacing 90 at A3 with 62
+
+Opponent (counter 7, optimal 167, score -7.00197):
+54  20  19   5  
+98  50  28   2  
+86  64  78  15  
+90  74  57  67  
+
+My Wall (counter 31, optimal 429, score -42.5512):
+83  68  82  75  
+93  88  58   3  
+79  77  44  31  
+47  81  89  62  
+Found improvement
+Replacing 82 at D2 with 16
+
+Opponent (counter 5, optimal 151, score -5.00076):
+54  20  19   5  
+82  50  28   2  
+86  64  78  15  
+90  74  57  67  
+
+My Wall (counter 25, optimal 363, score -32.0338):
+83  68  16  75  
+93  88  58   3  
+79  77  44  31  
+47  81  89  62  
+Found improvement
+Replacing 47 at A0 with 98
+
+Opponent (counter 2, optimal 123, score -2.00017):
+54  20  19   5  
+82  50  28   2  
+86  64  47  15  
+90  74  57  67  
+
+My Wall (counter 14, optimal 312, score -14.1151):
+83  68  16  75  
+93  88  58   3  
+79  77  44  31  
+98  81  89  62  
+Found improvement
+Replacing 88 at C1 with 78
+
+Opponent (counter 2, optimal 109, score -2.00015):
+54  20  19   5  
+82  50  28   2  
+86  64  47  15  
+90  88  57  67  
+
+My Wall (counter 12, optimal 302, score -12.045):
+83  68  16  75  
+93  78  58   3  
+79  77  44  31  
+98  81  89  62  
+Found improvement
+Replacing 44 at B2 with 74
+
+Opponent (counter 1, optimal 95, score -1.00009):
+54  20  19   5  
+82  50  28   2  
+86  64  47  15  
+90  88  57  44  
+
+My Wall (counter 11, optimal 323, score -11.032):
+83  68  16  75  
+93  78  58   3  
+79  77  74  31  
+98  81  89  62  
+Found improvement
+Replacing 75 at D3 with 67
+
+Opponent (counter 1, optimal 116, score -1.00011):
+75  20  19   5  
+82  50  28   2  
+86  64  47  15  
+90  88  57  44  
+
+My Wall (counter 9, optimal 315, score -9.01244):
+83  68  16  67  
+93  78  58   3  
+79  77  74  31  
+98  81  89  62  
+Found improvement
+Replacing 67 at D3 with 54
+
+Opponent (counter 1, optimal 108, score -1.0001):
+67  20  19   5  
+82  50  28   2  
+86  64  47  15  
+90  88  57  44  
+
+My Wall (counter 7, optimal 302, score -7.00472):
+83  68  16  54  
+93  78  58   3  
+79  77  74  31  
+98  81  89  62  
+Found improvement
+Replacing 89 at A2 with 75
+
+Opponent (counter 1, optimal 105, score -1.0001):
+67  20  19   5  
+82  50  28   2  
+89  64  47  15  
+90  88  57  44  
+
+My Wall (counter 6, optimal 288, score -6.00281):
+83  68  16  54  
+93  78  58   3  
+79  77  74  31  
+98  81  75  62  
+Found improvement
+Replacing 79 at B0 with 86
+
+Opponent (counter 2, optimal 125, score -2.00018):
+67  53  19   5  
+82  50  28   2  
+89  64  47  15  
+90  88  57  44  
+
+My Wall (counter 5, optimal 281, score -5.00173):
+83  68  16  54  
+93  78  58   3  
+86  77  74  31  
+98  81  75  62  
+Found improvement
+Replacing 54 at D3 with 20
+
+Opponent (counter 1, optimal 129, score -1.00012):
+67  53  19   5  
+82  54  28   2  
+89  64  47  15  
+90  88  57  44  
+
+My Wall (counter 4, optimal 247, score -4.00094):
+83  68  16  20  
+93  78  58   3  
+86  77  74  31  
+98  81  75  62  
+Found improvement
+Replacing 16 at D2 with 50
+
+Opponent (counter 1, optimal 126, score -1.00012):
+67  53  16   5  
+82  54  28   2  
+89  64  47  15  
+90  88  57  44  
+
+My Wall (counter 3, optimal 281, score -3.00069):
+83  68  50  20  
+93  78  58   3  
+86  77  74  31  
+98  81  75  62  
+Found improvement
+Replacing 20 at D3 with 19
+
+Opponent (counter 1, optimal 100, score -1.00009):
+67  26  16   5  
+82  54  28   2  
+89  64  47  15  
+90  88  57  44  
+
+My Wall (counter 3, optimal 280, score -3.00069):
+83  68  50  19  
+93  78  58   3  
+86  77  74  31  
+98  81  75  62  
+Found improvement
+Replacing 68 at D1 with 53
+
+Opponent (counter 1, optimal 96, score -1.00009):
+67  26  16   5  
+82  54  28   2  
+89  68  47  15  
+90  88  57  44  
+
+My Wall (counter 3, optimal 265, score -3.00065):
+83  53  50  19  
+93  78  58   3  
+86  77  74  31  
+98  81  75  62  
+Found improvement
+Replacing 78 at C1 with 64
+
+Opponent (counter 1, optimal 95, score -1.00009):
+67  26  16   5  
+82  54  28   2  
+89  69  47  15  
+90  88  57  44  
+
+My Wall (counter 2, optimal 251, score -2.00039):
+83  53  50  19  
+93  64  58   3  
+86  77  74  31  
+98  81  75  62  
+Found improvement
+Replacing 93 at C0 with 68
+
+Opponent (counter 1, optimal 92, score -1.00008):
+67  26  16   5  
+82  54  28   2  
+89  69  47  15  
+93  88  57  44  
+
+My Wall (counter 2, optimal 235, score -2.00036):
+83  53  50  19  
+68  64  58   3  
+86  77  74  31  
+98  81  75  62  
+Found improvement
+Replacing 81 at A1 with 90
+
+Opponent (counter 1, optimal 99, score -1.00009):
+67  26  16   5  
+82  54  28   2  
+89  69  47  15  
+93  81  57  44  
+
+My Wall (counter 2, optimal 227, score -2.00035):
+83  53  50  19  
+68  64  58   3  
+86  77  74  31  
+98  90  75  62  
+Found improvement
+Replacing 86 at B0 with 88
+
+Opponent (counter 1, optimal 94, score -1.00009):
+67  26  16   5  
+82  54  28   2  
+89  69  47  15  
+93  86  57  44  
+
+My Wall (counter 2, optimal 225, score -2.00034):
+83  53  50  19  
+68  64  58   3  
+88  77  74  31  
+98  90  75  62  
+Found improvement
+Replacing 83 at D0 with 81
+
+Opponent (counter 1, optimal 97, score -1.00009):
+67  26  16   5  
+82  54  28   2  
+89  69  47  15  
+93  83  57  44  
+
+My Wall (counter 2, optimal 223, score -2.00034):
+81  53  50  19  
+68  64  58   3  
+88  77  74  31  
+98  90  75  62  
+Found improvement
+Replacing 68 at C0 with 86
+
+Opponent (counter 1, optimal 116, score -1.00011):
+67  26  16   5  
+82  54  28   2  
+89  69  47  15  
+93  83  57  25  
+
+My Wall (counter 1, optimal 232, score -1.00022):
+81  53  50  19  
+86  64  58   3  
+88  77  74  31  
+98  90  75  62  
+Found improvement
+Replacing 62 at A3 with 44
+
+Opponent (counter 1, optimal 111, score -1.0001):
+67  26  16   5  
+82  54  28   2  
+89  69  47  15  
+93  83  62  25  
+
+My Wall (counter 1, optimal 223, score -1.00022):
+81  53  50  19  
+86  64  58   3  
+88  77  74  31  
+98  90  75  44  
+Found improvement
+Replacing 81 at D0 with 57
+
+Opponent (counter 1, optimal 126, score -1.00012):
+67  42  16   5  
+82  54  28   2  
+89  69  47  15  
+93  83  62  25  
+
+My Wall (counter 1, optimal 199, score -1.00019):
+57  53  50  19  
+86  64  58   3  
+88  77  74  31  
+98  90  75  44  
+Found improvement
+Replacing 3 at C3 with 26
+***WIN***
+Waiting for game asdf
+READY
+
+Opponent (counter 32, optimal 534, score -53.0151):
+14  68  50  25  
+88  97  36  65  
+72  87   3  80  
+27  98  58   4  
+
+My Wall (counter 52, optimal 609, score -60.9):
+31  78  93  74  
+89  42  71  17  
+43  51   0  82  
+ 6  70  85  66  
+Found improvement
+Replacing 6 at A0 with 84
+
+Opponent (counter 30, optimal 482, score -47.3368):
+14  68  50  25  
+88  97  36   6  
+72  87   3  80  
+27  98  58   4  
+
+My Wall (counter 41, optimal 531, score -53.0975):
+31  78  93  74  
+89  42  71  17  
+43  51   0  82  
+84  70  85  66  
+Found improvement
+Replacing 0 at B2 with 65
+
+Opponent (counter 26, optimal 457, score -40.4019):
+14  68  50   0  
+88  97  36   6  
+72  87   3  80  
+27  98  58   4  
+
+My Wall (counter 42, optimal 499, score -49.899):
+31  78  93  74  
+89  42  71  17  
+43  51  65  82  
+84  70  85  66  
+Found improvement
+Replacing 93 at D2 with 25
+
+Opponent (counter 18, optimal 391, score -19.0007):
+14  68  50   0  
+88  97  36   6  
+72  87   3  80  
+93  98  58   4  
+
+My Wall (counter 32, optimal 431, score -42.9004):
+31  78  25  74  
+89  42  71  17  
+43  51  65  82  
+84  70  85  66  
+Found improvement
+Replacing 74 at D3 with 27
+
+Opponent (counter 19, optimal 378, score -20.4261):
+14  68  50   0  
+88  97  36   6  
+72  74   3  80  
+93  98  58   4  
+
+My Wall (counter 24, optimal 384, score -31.2):
+31  78  25  27  
+89  42  71  17  
+43  51  65  82  
+84  70  85  66  
+Found improvement
+Replacing 43 at B0 with 87
+
+Opponent (counter 17, optimal 338, score -17.4924):
+14  68  50   0  
+88  97  36   6  
+72  74  43  80  
+93  98  58   4  
+
+My Wall (counter 20, optimal 340, score -21.6688):
+31  78  25  27  
+89  42  71  17  
+87  51  65  82  
+84  70  85  66  
+Found improvement
+Replacing 82 at B3 with 3
+
+Opponent (counter 17, optimal 337, score -17.4895):
+14  68  50   0  
+88  97  36   6  
+72  74  43  80  
+93  82  58   4  
+
+My Wall (counter 18, optimal 308, score -18.6071):
+31  78  25  27  
+89  42  71  17  
+87  51  65   3  
+84  70  85  66  
+Found improvement
+Replacing 84 at A0 with 98
+
+Opponent (counter 15, optimal 325, score -15.1923):
+14  68  50   0  
+88  97  36   6  
+84  74  43  80  
+93  82  58   4  
+
+My Wall (counter 15, optimal 294, score -15.1582):
+31  78  25  27  
+89  42  71  17  
+87  51  65   3  
+98  70  85  66  
+Found improvement
+Replacing 51 at B1 with 72
+
+Opponent (counter 11, optimal 279, score -11.0254):
+14  68  50   0  
+88  51  36   6  
+84  74  43  80  
+93  82  58   4  
+
+My Wall (counter 14, optimal 273, score -14.089):
+31  78  25  27  
+89  42  71  17  
+87  72  65   3  
+98  70  85  66  
+Found improvement
+Replacing 70 at A1 with 97
+
+Opponent (counter 9, optimal 266, score -9.00973):
+70  68  50   0  
+88  51  36   6  
+84  74  43  80  
+93  82  58   4  
+
+My Wall (counter 10, optimal 261, score -10.0147):
+31  78  25  27  
+89  42  71  17  
+87  72  65   3  
+98  97  85  66  
+Found improvement
+Replacing 27 at D3 with 14
+
+Opponent (counter 6, optimal 213, score -6.00189):
+70  68  50   0  
+88  51  36   6  
+84  74  43  27  
+93  82  58   4  
+
+My Wall (counter 8, optimal 248, score -8.00563):
+31  78  25  14  
+89  42  71  17  
+87  72  65   3  
+98  97  85  66  
+Found improvement
+Replacing 89 at C0 with 80
+
+Opponent (counter 5, optimal 208, score -5.00118):
+70  68  50   0  
+88  51  36   6  
+89  74  43  27  
+93  82  58   4  
+
+My Wall (counter 7, optimal 239, score -7.00344):
+31  78  25  14  
+80  42  71  17  
+87  72  65   3  
+98  97  85  66  
+Found improvement
+Replacing 72 at B1 with 84
+
+Opponent (counter 4, optimal 187, score -4.00067):
+70  68  50   0  
+88  51  36   6  
+89  74  43  27  
+93  82  58  72  
+
+My Wall (counter 6, optimal 250, score -6.00234):
+31  78  25  14  
+80  42  71  17  
+87  84  65   3  
+98  97  85  66  
+Found improvement
+Replacing 78 at D1 with 4
+
+Opponent (counter 4, optimal 177, score -4.00062):
+70  68  50   0  
+78  51  36   6  
+89  74  43  27  
+93  82  58  72  
+
+My Wall (counter 6, optimal 221, score -6.00199):
+31   4  25  14  
+80  42  71  17  
+87  84  65   3  
+98  97  85  66  
+Found improvement
+Replacing 97 at A1 with 88
+
+Opponent (counter 4, optimal 173, score -4.0006):
+70  68  50   0  
+78  51  36   6  
+89  74  43  27  
+97  82  58  72  
+
+My Wall (counter 6, optimal 215, score -6.00191):
+31   4  25  14  
+80  42  71  17  
+87  84  65   3  
+98  88  85  66  
+Found no improvement. Drawing
+Replacing 3 at B3 with 45
+
+Opponent (counter 2, optimal 139, score -2.0002):
+70  68   3   0  
+78  51  36   6  
+89  74  43  27  
+97  82  58  72  
+
+My Wall (counter 4, optimal 210, score -4.00077):
+31   4  25  14  
+80  42  71  17  
+87  84  65  45  
+98  88  85  66  
+Found improvement
+Replacing 71 at C2 with 50
+
+Opponent (counter 2, optimal 139, score -2.0002):
+70  68   3   0  
+78  51  36   6  
+89  71  43  27  
+97  82  58  72  
+
+My Wall (counter 3, optimal 189, score -3.00044):
+31   4  25  14  
+80  42  50  17  
+87  84  65  45  
+98  88  85  66  
+Found improvement
+Replacing 42 at C1 with 74
+
+Opponent (counter 1, optimal 113, score -1.0001):
+70  42   3   0  
+78  51  36   6  
+89  71  43  27  
+97  82  58  72  
+
+My Wall (counter 2, optimal 208, score -2.00031):
+31   4  25  14  
+80  74  50  17  
+87  84  65  45  
+98  88  85  66  
+Found improvement
+Replacing 4 at D1 with 68
+
+Opponent (counter 1, optimal 112, score -1.0001):
+70  42   4   0  
+78  51  36   6  
+89  71  43  27  
+97  82  58  72  
+
+My Wall (counter 1, optimal 227, score -1.00022):
+31  68  25  14  
+80  74  50  17  
+87  84  65  45  
+98  88  85  66  
+Found improvement
+Replacing 14 at D3 with 3
+
+Opponent (counter 1, optimal 111, score -1.0001):
+70  42  14   0  
+78  51  36   6  
+89  71  43  27  
+97  82  58  72  
+
+My Wall (counter 1, optimal 216, score -1.00021):
+31  68  25   3  
+80  74  50  17  
+87  84  65  45  
+98  88  85  66  
+Found improvement
+Replacing 68 at D1 with 4
+
+Opponent (counter 1, optimal 107, score -1.0001):
+70  42  14   0  
+78  51  36   6  
+89  71  43  27  
+97  82  58  68  
+
+My Wall (counter 1, optimal 197, score -1.00019):
+31   4  25   3  
+80  74  50  17  
+87  84  65  45  
+98  88  85  66  
+Found improvement
+Replacing 85 at A2 with 72
+
+Opponent (counter 1, optimal 114, score -1.00011):
+70  42  14   0  
+85  51  36   6  
+89  71  43  27  
+97  82  58  68  
+
+My Wall (counter 1, optimal 185, score -1.00018):
+31   4  25   3  
+80  74  50  17  
+87  84  65  45  
+98  88  72  66  
+Found improvement
+Replacing 84 at B1 with 78
+
+Opponent (counter 1, optimal 112, score -1.0001):
+70  42  14   0  
+85  51  36   6  
+89  71  43  27  
+97  84  58  68  
+
+My Wall (counter 1, optimal 179, score -1.00017):
+31   4  25   3  
+80  74  50  17  
+87  78  65  45  
+98  88  72  66  
+Found no improvement. Drawing
+Replacing 4 at D1 with 24
+***LOSE***
+Waiting for game asdf
+END
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error

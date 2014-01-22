@@ -1,0 +1,579 @@
+Waiting for game qwerty
+READY
+
+My Wall (counter 37, optimal 467, score -46.6854):
+34  37   7  71  
+ 9  65  20  78  
+62  57  43  92  
+44  95  84  14  
+Found improvement
+Replacing 92 at B3 with 30
+
+My Wall (counter 34, optimal 405, score -40.4565):
+34  37   7  71  
+ 9  65  20  78  
+62  57  43  30  
+44  95  84  14  
+Found improvement
+Replacing 78 at C3 with 39
+
+My Wall (counter 30, optimal 366, score -36.287):
+34  37   7  71  
+ 9  65  20  39  
+62  57  43  30  
+44  95  84  14  
+Found improvement
+Replacing 71 at D3 with 17
+
+My Wall (counter 20, optimal 312, score -21.3351):
+34  37   7  17  
+ 9  65  20  39  
+62  57  43  30  
+44  95  84  14  
+Found improvement
+Replacing 9 at C0 with 77
+
+My Wall (counter 16, optimal 253, score -16.1673):
+34  37   7  17  
+77  65  20  39  
+62  57  43  30  
+44  95  84  14  
+Found improvement
+Replacing 44 at A0 with 92
+
+My Wall (counter 11, optimal 205, score -11.0143):
+34  37   7  17  
+77  65  20  39  
+62  57  43  30  
+92  95  84  14  
+Found improvement
+Replacing 62 at B0 with 96
+
+My Wall (counter 10, optimal 184, score -10.0077):
+34  37   7  17  
+77  65  20  39  
+96  57  43  30  
+92  95  84  14  
+Found improvement
+Replacing 14 at A3 with 81
+
+My Wall (counter 7, optimal 182, score -7.00228):
+34  37   7  17  
+77  65  20  39  
+96  57  43  30  
+92  95  84  81  
+Found improvement
+Replacing 34 at D0 with 61
+
+My Wall (counter 6, optimal 180, score -6.00148):
+61  37   7  17  
+77  65  20  39  
+96  57  43  30  
+92  95  84  81  
+Found improvement
+Replacing 92 at A0 with 94
+
+My Wall (counter 6, optimal 178, score -6.00146):
+61  37   7  17  
+77  65  20  39  
+96  57  43  30  
+94  95  84  81  
+Found improvement
+Replacing 65 at C1 with 40
+
+My Wall (counter 5, optimal 170, score -5.0009):
+61  37   7  17  
+77  40  20  39  
+96  57  43  30  
+94  95  84  81  
+Found improvement
+Replacing 39 at C3 with 28
+
+My Wall (counter 4, optimal 159, score -4.00054):
+61  37   7  17  
+77  40  20  28  
+96  57  43  30  
+94  95  84  81  
+Found improvement
+Replacing 81 at A3 with 45
+
+My Wall (counter 4, optimal 130, score -4.00041):
+61  37   7  17  
+77  40  20  28  
+96  57  43  30  
+94  95  84  45  
+Found improvement
+Replacing 96 at B0 with 78
+
+My Wall (counter 3, optimal 135, score -3.00029):
+61  37   7  17  
+77  40  20  28  
+78  57  43  30  
+94  95  84  45  
+Found improvement
+Replacing 78 at B0 with 82
+
+My Wall (counter 3, optimal 131, score -3.00028):
+61  37   7  17  
+77  40  20  28  
+82  57  43  30  
+94  95  84  45  
+Found improvement
+Replacing 20 at C2 with 29
+
+My Wall (counter 2, optimal 127, score -2.00018):
+61  37   7  17  
+77  40  29  28  
+82  57  43  30  
+94  95  84  45  
+Found improvement
+Replacing 57 at B1 with 64
+
+My Wall (counter 2, optimal 120, score -2.00017):
+61  37   7  17  
+77  40  29  28  
+82  64  43  30  
+94  95  84  45  
+Found improvement
+Replacing 84 at A2 with 73
+
+My Wall (counter 2, optimal 109, score -2.00015):
+61  37   7  17  
+77  40  29  28  
+82  64  43  30  
+94  95  73  45  
+Found improvement
+Replacing 95 at A1 with 81
+
+My Wall (counter 1, optimal 112, score -1.0001):
+61  37   7  17  
+77  40  29  28  
+82  64  43  30  
+94  81  73  45  
+Found improvement
+Replacing 81 at A1 with 90
+
+My Wall (counter 1, optimal 104, score -1.0001):
+61  37   7  17  
+77  40  29  28  
+82  64  43  30  
+94  90  73  45  
+Found improvement
+Replacing 61 at D0 with 59
+
+My Wall (counter 1, optimal 102, score -1.00009):
+59  37   7  17  
+77  40  29  28  
+82  64  43  30  
+94  90  73  45  
+Found improvement
+Replacing 64 at B1 with 66
+
+My Wall (counter 1, optimal 100, score -1.00009):
+59  37   7  17  
+77  40  29  28  
+82  66  43  30  
+94  90  73  45  
+Found improvement
+Replacing 66 at B1 with 75
+
+My Wall (counter 1, optimal 96, score -1.00009):
+59  37   7  17  
+77  40  29  28  
+82  75  43  30  
+94  90  73  45  
+Found no improvement. Drawing
+Replacing 82 at B0 with 93
+
+My Wall (counter 1, optimal 92, score -1.00008):
+59  37   7  17  
+77  40  29  28  
+93  75  43  30  
+94  90  73  45  
+Found improvement
+Replacing 77 at C0 with 69
+
+My Wall (counter 1, optimal 91, score -1.00008):
+59  37   7  17  
+69  40  29  28  
+93  75  43  30  
+94  90  73  45  
+Found no improvement. Drawing
+Replacing 7 at D2 with 24
+***WIN***
+Waiting for game qwerty
+READY
+
+My Wall (counter 40, optimal 579, score -57.894):
+30  36  55  21  
+ 2  82  79  91  
+25  33  13  81  
+92  77  87  74  
+Found improvement
+Replacing 91 at C3 with 11
+
+My Wall (counter 32, optimal 499, score -49.578):
+30  36  55  21  
+ 2  82  79  11  
+25  33  13  81  
+92  77  87  74  
+Found improvement
+Replacing 2 at C0 with 51
+
+My Wall (counter 29, optimal 450, score -43.7863):
+30  36  55  21  
+51  82  79  11  
+25  33  13  81  
+92  77  87  74  
+Found improvement
+Replacing 25 at B0 with 90
+
+My Wall (counter 21, optimal 386, score -24.2107):
+30  36  55  21  
+51  82  79  11  
+90  33  13  81  
+92  77  87  74  
+Found improvement
+Replacing 55 at D2 with 6
+
+My Wall (counter 17, optimal 344, score -17.51):
+30  36   6  21  
+51  82  79  11  
+90  33  13  81  
+92  77  87  74  
+Found improvement
+Replacing 81 at B3 with 66
+
+My Wall (counter 15, optimal 329, score -15.1967):
+30  36   6  21  
+51  82  79  11  
+90  33  13  66  
+92  77  87  74  
+Found improvement
+Replacing 79 at C2 with 35
+
+My Wall (counter 13, optimal 285, score -13.0631):
+30  36   6  21  
+51  82  35  11  
+90  33  13  66  
+92  77  87  74  
+Found improvement
+Replacing 33 at B1 with 95
+
+My Wall (counter 12, optimal 268, score -12.0366):
+30  36   6  21  
+51  82  35  11  
+90  95  13  66  
+92  77  87  74  
+Found improvement
+Replacing 13 at B2 with 53
+
+My Wall (counter 10, optimal 237, score -10.0125):
+30  36   6  21  
+51  82  35  11  
+90  95  53  66  
+92  77  87  74  
+Found improvement
+Replacing 66 at B3 with 33
+
+My Wall (counter 9, optimal 204, score -9.0063):
+30  36   6  21  
+51  82  35  11  
+90  95  53  33  
+92  77  87  74  
+Found improvement
+Replacing 95 at B1 with 62
+
+My Wall (counter 7, optimal 192, score -7.00248):
+30  36   6  21  
+51  82  35  11  
+90  62  53  33  
+92  77  87  74  
+Found improvement
+Replacing 77 at A1 with 91
+
+My Wall (counter 5, optimal 181, score -5.00098):
+30  36   6  21  
+51  82  35  11  
+90  62  53  33  
+92  91  87  74  
+Found improvement
+Replacing 82 at C1 with 44
+
+My Wall (counter 3, optimal 152, score -3.00034):
+30  36   6  21  
+51  44  35  11  
+90  62  53  33  
+92  91  87  74  
+Found improvement
+Replacing 74 at A3 with 58
+
+My Wall (counter 3, optimal 136, score -3.00029):
+30  36   6  21  
+51  44  35  11  
+90  62  53  33  
+92  91  87  58  
+Found improvement
+Replacing 51 at C0 with 72
+
+My Wall (counter 3, optimal 115, score -3.00023):
+30  36   6  21  
+72  44  35  11  
+90  62  53  33  
+92  91  87  58  
+Found improvement
+Replacing 30 at D0 with 43
+
+My Wall (counter 2, optimal 102, score -2.00014):
+43  36   6  21  
+72  44  35  11  
+90  62  53  33  
+92  91  87  58  
+Found improvement
+Replacing 58 at A3 with 46
+
+My Wall (counter 2, optimal 95, score -2.00013):
+43  36   6  21  
+72  44  35  11  
+90  62  53  33  
+92  91  87  46  
+Found improvement
+Replacing 21 at D3 with 14
+
+My Wall (counter 2, optimal 88, score -2.00011):
+43  36   6  14  
+72  44  35  11  
+90  62  53  33  
+92  91  87  46  
+Found improvement
+Replacing 14 at D3 with 5
+***WIN***
+Waiting for game qwerty
+READY
+
+My Wall (counter 34, optimal 394, score -39.3639):
+30  16  23  36  
+61  92  35  22  
+34  14  72  11  
+89  10  71  51  
+Found improvement
+Replacing 10 at A1 with 99
+
+My Wall (counter 24, optimal 324, score -28.2):
+30  16  23  36  
+61  92  35  22  
+34  14  72  11  
+89  99  71  51  
+Found improvement
+Replacing 14 at B1 with 53
+
+My Wall (counter 20, optimal 285, score -21.0132):
+30  16  23  36  
+61  92  35  22  
+34  53  72  11  
+89  99  71  51  
+Found improvement
+Replacing 34 at B0 with 57
+
+My Wall (counter 17, optimal 262, score -17.2697):
+30  16  23  36  
+61  92  35  22  
+57  53  72  11  
+89  99  71  51  
+Found improvement
+Replacing 92 at C1 with 25
+
+My Wall (counter 15, optimal 242, score -15.1011):
+30  16  23  36  
+61  25  35  22  
+57  53  72  11  
+89  99  71  51  
+Found improvement
+Replacing 36 at D3 with 4
+
+My Wall (counter 8, optimal 210, score -8.00436):
+30  16  23   4  
+61  25  35  22  
+57  53  72  11  
+89  99  71  51  
+Found improvement
+Replacing 23 at D2 with 8
+
+My Wall (counter 7, optimal 198, score -7.0026):
+30  16   8   4  
+61  25  35  22  
+57  53  72  11  
+89  99  71  51  
+Found improvement
+Replacing 57 at B0 with 68
+
+My Wall (counter 6, optimal 187, score -6.00157):
+30  16   8   4  
+61  25  35  22  
+68  53  72  11  
+89  99  71  51  
+Found improvement
+Replacing 72 at B2 with 15
+
+My Wall (counter 5, optimal 197, score -5.0011):
+30  16   8   4  
+61  25  35  22  
+68  53  15  11  
+89  99  71  51  
+Found improvement
+Replacing 99 at A1 with 77
+
+My Wall (counter 4, optimal 200, score -4.00073):
+30  16   8   4  
+61  25  35  22  
+68  53  15  11  
+89  77  71  51  
+Found improvement
+Replacing 15 at B2 with 32
+
+My Wall (counter 3, optimal 183, score -3.00042):
+30  16   8   4  
+61  25  35  22  
+68  53  32  11  
+89  77  71  51  
+Found improvement
+Replacing 68 at B0 with 81
+
+My Wall (counter 3, optimal 170, score -3.00039):
+30  16   8   4  
+61  25  35  22  
+81  53  32  11  
+89  77  71  51  
+Found improvement
+Replacing 11 at B3 with 33
+
+My Wall (counter 3, optimal 161, score -3.00036):
+30  16   8   4  
+61  25  35  22  
+81  53  32  33  
+89  77  71  51  
+Found improvement
+Replacing 61 at C0 with 79
+
+My Wall (counter 3, optimal 156, score -3.00035):
+30  16   8   4  
+79  25  35  22  
+81  53  32  33  
+89  77  71  51  
+Found improvement
+Replacing 32 at B2 with 65
+
+My Wall (counter 2, optimal 156, score -2.00023):
+30  16   8   4  
+79  25  35  22  
+81  53  65  33  
+89  77  71  51  
+Found improvement
+Replacing 53 at B1 with 73
+
+My Wall (counter 1, optimal 137, score -1.00013):
+30  16   8   4  
+79  25  35  22  
+81  73  65  33  
+89  77  71  51  
+Found improvement
+Replacing 25 at C1 with 62
+***WIN***
+Waiting for game qwerty
+END
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error
+Connection Error

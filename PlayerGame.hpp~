@@ -21,32 +21,30 @@
 #include <netinet/in.h>
 #include <netdb.h>
 
-using namespace std;
-
 const int STATE_SIZE  = 4;
 const int STATE_DIM   = 2;
-const int STATE_NUM   = pow(STATE_SIZE, STATE_DIM);
+const int STATE_NUM   = std::pow(STATE_SIZE, STATE_DIM);
 
 const int MAX_MESSAGE_LENGTH = 1024;
 const char DELIMITER = ' ';
 
 template <typename IT>
-vector<vector<int> > data2wall(IT begin, IT end) {
-  vector<vector<int> > data;
+std::vector<std::vector<int> > data2wall(IT begin, IT end) {
+  std::vector<std::vector<int> > data;
   for (; begin < end; begin += STATE_SIZE)
-    data.push_back(vector<int>(begin, begin + STATE_SIZE));
+    data.push_back(std::vector<int>(begin, begin + STATE_SIZE));
   return data;
 }
 
-vector<vector<int> > vector2wall(const vector<int>& v) {
+std::vector<std::vector<int> > vector2wall(const std::vector<int>& v) {
   return data2wall(v.begin(), v.end());
 }
 
-vector<int> string2vector(const string& s) {
-  vector<int> data;
-  stringstream str(s);
-  copy(istream_iterator<int>(str), istream_iterator<int>(),
-            back_inserter(data));
+std::vector<int> string2vector(const std::string& s) {
+  std::vector<int> data;
+  std::stringstream str(s);
+  std::copy(std::istream_iterator<int>(str), std::istream_iterator<int>(),
+            std::back_inserter(data));
   return data;
 }
 
@@ -56,36 +54,36 @@ class Game {
   int comm;
   char buffer[MAX_MESSAGE_LENGTH];
 
-  string recv() {
+  std::string recv() {
     int read_char = read(comm, buffer, MAX_MESSAGE_LENGTH);
     if (read_char == -1)
-      cout << "READ ERROR" << endl;
-    string s(buffer, read_char);
-    if (s == string("")) {
-      cout << "END" << endl;
+      std::cout << "READ ERROR" << std::endl;
+    std::string s(buffer, read_char);
+    if (s == std::string("")) {
+      std::cout << "END" << std::endl;
       exit(0);
     }
     return s;
   }
 
-  void send(const string& s) {
+  void send(const std::string& s) {
     if (write(comm, s.c_str(), s.size()) == -1)
-      cout << "WRITE ERROR" << endl;
+      std::cout << "WRITE ERROR" << std::endl;
   }
 
  public:
-  typedef vector<vector<int> > wall_type;
+  typedef std::vector<std::vector<int> > wall_type;
   wall_type wall;
   wall_type owall;
 
-  Game(const string& game_id) {
+  Game(const std::string& game_id) {
     comm = socket(AF_INET, SOCK_STREAM, 0);
     memset(buffer, 0, MAX_MESSAGE_LENGTH);
 
     hostent* server = gethostbyname("crisco.seas.harvard.edu");
     //hostent* server = gethostbyname("localhost");
     if (server == NULL)
-      cout << "No such host!" << endl;;
+      std::cout << "No such host!" << std::endl;;
 
     sockaddr_in addr;
     memset((char*)&addr, 0, sizeof(addr));
@@ -93,14 +91,14 @@ class Game {
     addr.sin_port = htons(8080);
     memcpy((char*)&addr.sin_addr.s_addr, (char*)server->h_addr, server->h_length);
     if (connect(comm, (sockaddr*)&addr, sizeof(addr)) < 0)
-      cout << "Connection Error" << endl;
+      std::cout << "Connection Error" << std::endl;
 
     send(game_id);
-    cout << "Waiting for game " << recv() << endl;
+    std::cout << "Waiting for game " << recv() << std::endl;
 
-    string message = recv();
-    cout << message << endl;
-    assert(message == string("READY"));
+    std::string message = recv();
+    std::cout << message << std::endl;
+    assert(message == std::string("READY"));
 
     // Receive our game wall
     wall = vector2wall(string2vector(recv()));
@@ -111,26 +109,26 @@ class Game {
   }
 
   int get_discard() {
-    string msg = recv();
-    if (msg == string("LOSE")) {
-      cout << "***" << msg << "***" << endl;
+    std::string msg = recv();
+    if (msg == std::string("LOSE")) {
+      std::cout << "***" << msg << "***" << std::endl;
       exit(0);
     }
-    vector<int> data = string2vector(msg);
+    std::vector<int> data = string2vector(msg);
     owall = data2wall(data.begin()+1, data.end());
     return data[0];
   }
 
-  int get_brick(const string& move) {
+  int get_brick(const std::string& move) {
     send(move);
     return atoi(recv().c_str());
   }
 
-  void make_move(const string& move) {
+  void make_move(const std::string& move) {
     send(move);
-    string msg = recv();
-    if (msg == string("WIN")) {
-      cout << "***" << msg << "***" << endl;
+    std::string msg = recv();
+    if (msg == std::string("WIN")) {
+      std::cout << "***" << msg << "***" << std::endl;
       exit(0);
     }
     wall = vector2wall(string2vector(msg));

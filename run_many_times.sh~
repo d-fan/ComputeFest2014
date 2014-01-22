@@ -2,6 +2,6 @@
 
 for ((i = 1; i <= $1; i++)); do
     ./$2 string_for_bash | tail -1 >> $4 & ./$3 string_for_bash > /dev/null
-    echo i
+    echo $i
 done
 grep WIN $4 | wc -l

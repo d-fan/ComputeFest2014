@@ -1,26 +1,24 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
-#include <climits>   
+#include <sstream>
 
 #include "PlayerGame.hpp"
 
-#include <cmath>
-
-const double opt_arr[4][4] = {{0.0,9.9,26.4,48.5},
-			      {9.9,26.4,48.5,72.6},
-			      {26.4,48.5,72.6,89.1},
-			      {48.5,72.6,89.1,99.0}};
+#define MAX 0
+#define MIN 1
+int allowed[4][4][2] = {{{99,90},{89,75},{74,60},{59,45}},
+		                    {{89,75},{74,60},{59,45},{44,30}},
+	                      {{74,60},{59,45},{44,30},{29,15}},
+	                      {{59,45},{44,30},{29,15},{14,00}}};
 
 Game::wall_type lwall;
 bool initialized = false;
-int score(const Game::wall_type& wall);
 
 /** Pretty print a game wall */
 void print_wall(const Game::wall_type& s, bool highlight = false)
 {
-  printf("  ||");
+  p.rintf("  ||");
   for (unsigned i = 0; i < s[0].size(); ++i) printf(" %2d |", i);
   printf("|\n%s\n", std::string(4+5*s[0].size()+1,'=').c_str());
   for (unsigned i = s.size()-1; i > 0; --i) {
@@ -60,25 +58,27 @@ std::string choose_discard_or_pile(const Game::wall_type& wall,
                                 const Game::wall_type& owall,
                                 int discard_brick)
 {
-  std::cout << "\nOpponent (score " << score(owall) << "):" << std::endl;
+  std::cout << "\nOpponent:" << std::endl;
   print_wall(owall, initialized);
-  std::cout << "\nMy Wall (score " << score(wall) << "):" << std::endl;
+  std::cout << "\nMy Wall:" << std::endl;
   print_wall(wall);
   lwall = owall;
   initialized = true;
 
-  // Check if board score can be increased with discard_brick
-  for (int i = 0; i < wall.size(); i++) {
-    for (int j = 0; j < wall.size(); j++) {
-      Game::wall_type temp = wall;
-      temp[i][j] = discard_brick;
-      if(score(temp) > score(wall)) {
-        std::cout << "Found improvement" << std::endl;
+  int replace = 0;
+  int brick = discard_brick;
+  // find a correctable error
+  for(unsigned i = 0; i < wall.size(); i++) {
+    for(unsigned j = 0; j < wall.size(); j++) {
+      replace = wall[i][j];
+      if (brick <= allowed[i][j][MAX] && brick >= allowed[i][j][MIN] &&
+          (replace > allowed[i][j][MAX] || replace < allowed[i][j][MIN])) {
+        std::cout << "Able to use " << brick << " at " << char(i+'a') << j << std::endl;
         return "d";
       }
     }
   }
-  std::cout << "Found no improvement. Drawing" << std::endl;
+  std::cout << "Taking frome pile" << std::endl;
   return "p";
 }
 
@@ -101,22 +101,22 @@ std::string choose_coord(const Game::wall_type& wall,
                          const Game::wall_type& owall,
                          int brick)
 {
-  int best[3] = {-1,-1,INT_MIN};
-  for(int i = 0; i < wall.size(); i++) {
-    for(int j = 0; j < wall.size(); j++) {
-      Game::wall_type temp = wall;
-      temp[i][j] = brick;
-      int temp_score = score(temp);
-      if (temp_score > best[2]) {
-        best[0] = i;
-        best[1] = j;
-        best[2] = temp_score;
+  std::stringstream move;
+  int replace = -1;
+  // find a correctable error
+  for(unsigned i = 0; i < wall.size(); i++) {
+    for(unsigned j = 0; j < wall.size(); j++) {
+      replace = wall[i][j];
+      if (brick <= allowed[i][j][MAX] && brick >= allowed[i][j][MIN] &&
+          (replace > allowed[i][j][MAX] || replace < allowed[i][j][MIN])) {
+        move << char(i + 'a') << j;
+        std::cout << "Replacing " << replace << " at " << move.str() << " with " << brick << std::endl;
+        return move.str();
       }
     }
   }
-  if (best[0] < 0 || best[1] < 0) return "-1";
-  std::cout << "Replacing " << wall[best[0]][best[1]] << " at " << best[0] << best[1] << " with " << brick << std::endl;
-  return rowcol2coord(best[0], best[1]);
+  std::cout << "No move found. Passing" << std::endl;
+  return "-1";
 }
 
 
@@ -151,101 +151,3 @@ int main(int argc, char** argv)
 
   return 0;
 }
-
-/*
-
-Rough idea:
-45 30 15 00
-60
-75
-99
-
-w[i+1][j] - w[i][j]
-
-*/
-
-int score3(const Game::wall_type& wall) {
-  // Count how many elements are in order
-  int ordered = 0;
-  for(int i = 0; i < wall.size(); i++) {
-    for(int j = 0; j < wall.size(); j++) {
-      if (wall[i][j] > wall[i+1][j]) ordered++;
-      if (wall[i][j] > wall[i][j+1]) ordered++;
-    }
-  }
-  return ordered;
-}
-
-int score2(const Game::wall_type& wall) {
-  int score = 0;
-  for(int i = 0; i < wall.size(); i++) {
-    for(int j = 0; j < wall.size(); j++) {
-      if (j < wall.size() - 1) score += wall[i][j] > wall[i][j+1] ? wall[i][j] - wall[i][j+1] : 99;
-      if (i < wall.size() - 1) score += wall[i][j] > wall[i+1][j] ? wall[i][j] - wall[i+1][j] : 99;
-    }
-  }
-  return -score;
-}
-
-int score(const Game::wall_type& wall) {
-  int counter = 0;
-  for(int i = 0; i < wall.size(); i++) {
-    for(int j = 0; j < wall.size(); j++) {
-      for(int m = i; m < wall.size(); m++) {
-        for(int n = j; n < wall.size(); n++) {
-          if(wall[m][n] > wall[i][j]) counter++;
-        }
-      }
-    }
-  }
-  return -counter;
-}
-
-
-
-int score4(const Game::wall_type& wall) {
-  int counter = 0;
-  for(int i = 0; i < wall.size(); i++) {
-    for(int j = 0; j < wall.size(); j++) {
-      for(int m = i; m < wall.size(); m++) {
-        for(int n = j; n < wall.size(); n++) {
-          if(wall[m][n] > wall[i][j]) counter += wall[i][j] - wall[m][n];
-        }
-      }
-    }
-  }
-  return -counter;
-}
-
-double opt_arr_addition(const Game::wall_type& wall)
-{
-  double penalizer = 0;
-  for(int i = 0;i>wall.size();i++)
-    {
-      for(int j=0;j<wall.size();j++)
-	{
-	  penalizer += abs(wall[i][j]-opt_arr[i][j]);
-	}
-    }
-  return penalizer;
-}
-
-int combined_score (const Game::wall_type& wall, double divisor)
-{
-  return score(wall) + (int)(opt_arr_addition(wall)*score(wall)/divisor);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

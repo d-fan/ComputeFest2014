@@ -108,7 +108,7 @@ std::string choose_coord(const Game::wall_type& wall,
     }
   }
   if (best[0] < 0 || best[1] < 0) return "-1";
-  std::cout << "Replacing " << wall[best[0]][best[1]] << " at " << best[0] << best[1] << " with " << brick << std::endl;
+  std::cout << "Replacing " << wall[best[0]][best[1]] << " at " << char('A' + best[0]) << best[1] << " with " << brick << std::endl;
   return rowcol2coord(best[0], best[1]);
 }
 

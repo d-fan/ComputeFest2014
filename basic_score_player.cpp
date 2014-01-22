@@ -8,6 +8,8 @@
 
 #include <cmath>
 
+#define DIVISOR 100
+
 const double opt_arr[4][4] = {{0.0,9.9,26.4,48.5},
 			      {9.9,26.4,48.5,72.6},
 			      {26.4,48.5,72.6,89.1},
@@ -115,7 +117,7 @@ std::string choose_coord(const Game::wall_type& wall,
     }
   }
   if (best[0] < 0 || best[1] < 0) return "-1";
-  std::cout << "Replacing " << wall[best[0]][best[1]] << " at " << best[0] << best[1] << " with " << brick << std::endl;
+  std::cout << "Replacing " << wall[best[0]][best[1]] << " at " << char('A' + best[0]) << best[1] << " with " << brick << std::endl;
   return rowcol2coord(best[0], best[1]);
 }
 
@@ -187,7 +189,7 @@ int score2(const Game::wall_type& wall) {
   return -score;
 }
 
-int score(const Game::wall_type& wall) {
+int counter_score(const Game::wall_type& wall) {
   int counter = 0;
   for(int i = 0; i < wall.size(); i++) {
     for(int j = 0; j < wall.size(); j++) {
@@ -198,7 +200,7 @@ int score(const Game::wall_type& wall) {
       }
     }
   }
-  return -counter;
+  return counter;
 }
 
 
@@ -230,9 +232,9 @@ double opt_arr_addition(const Game::wall_type& wall)
   return penalizer;
 }
 
-int combined_score (const Game::wall_type& wall, double divisor)
+int score(const Game::wall_type& wall)
 {
-  return score(wall) + (int)(opt_arr_addition(wall)*score(wall)/divisor);
+  return -(counter_score(wall) + (int)(opt_arr_addition(wall)*counter_score(wall)/DIVISOR));
 }
 
 int calculate_random_draw (const Game::wall_type& wall)
@@ -261,9 +263,6 @@ int calculate_random_draw (const Game::wall_type& wall)
     }
   return (double) total_score/100.;
 }
-
-
-
 
 
 

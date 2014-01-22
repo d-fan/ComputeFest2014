@@ -6,6 +6,15 @@
 
 #include "PlayerGame.hpp"
 
+#include <cmath>
+
+#define DIVISOR 100
+
+const double opt_arr[4][4] = {{0.0,9.9,26.4,48.5},
+			      {9.9,26.4,48.5,72.6},
+			      {26.4,48.5,72.6,89.1},
+			      {48.5,72.6,89.1,99.0}};
+
 Game::wall_type lwall;
 bool initialized = false;
 int score(const Game::wall_type& wall);
@@ -108,7 +117,7 @@ std::string choose_coord(const Game::wall_type& wall,
     }
   }
   if (best[0] < 0 || best[1] < 0) return "-1";
-  std::cout << "Replacing " << wall[best[0]][best[1]] << " at " << best[0] << best[1] << " with " << brick << std::endl;
+  std::cout << "Replacing " << wall[best[0]][best[1]] << " at " << char('A' + best[0]) << best[1] << " with " << brick << std::endl;
   return rowcol2coord(best[0], best[1]);
 }
 
@@ -180,7 +189,7 @@ int score2(const Game::wall_type& wall) {
   return -score;
 }
 
-int score0(const Game::wall_type& wall) {
+int counter_score(const Game::wall_type& wall) {
   int counter = 0;
   for(int i = 0; i < wall.size(); i++) {
     for(int j = 0; j < wall.size(); j++) {
@@ -191,12 +200,12 @@ int score0(const Game::wall_type& wall) {
       }
     }
   }
-  return -counter;
+  return counter;
 }
 
 
 
-int score(const Game::wall_type& wall) {
+int score4(const Game::wall_type& wall) {
   int counter = 0;
   for(int i = 0; i < wall.size(); i++) {
     for(int j = 0; j < wall.size(); j++) {
@@ -210,13 +219,23 @@ int score(const Game::wall_type& wall) {
   return -counter;
 }
 
+double opt_arr_addition(const Game::wall_type& wall)
+{
+  double penalizer = 0;
+  for(int i = 0;i>wall.size();i++)
+    {
+      for(int j=0;j<wall.size();j++)
+	{
+	  penalizer += abs(wall[i][j]-opt_arr[i][j]);
+	}
+    }
+  return penalizer;
+}
 
-
-
-
-
-
-
+int score(const Game::wall_type& wall)
+{
+  return -(counter_score(wall) + (int)(opt_arr_addition(wall)*counter_score(wall)/DIVISOR));
+}
 
 
 

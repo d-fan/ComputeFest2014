@@ -8,7 +8,7 @@
 
 #include <cmath>
 
-#define DIVISOR 100
+#define DIVISOR 1000
 
 const double opt_arr[4][4] = {{0.0,9.9,26.4,48.5},
 			      {9.9,26.4,48.5,72.6},
@@ -108,7 +108,7 @@ std::string choose_coord(const Game::wall_type& wall,
 {
   int* min_info = calculate_draw(wall, brick);
   Game::wall_type temp = wall;
-  temp[min_info[1]][min_info[2]] = brick;
+  temp[min_info[0]][min_info[1]] = brick;
   if (score(wall) > score(temp))
     {
       return "bad_brick";
@@ -205,8 +205,6 @@ int counter_score(const Game::wall_type& wall) {
   return counter;
 }
 
-
-
 int score4(const Game::wall_type& wall) {
   int counter = 0;
   for(int i = 0; i < wall.size(); i++) {
@@ -239,34 +237,34 @@ int score(const Game::wall_type& wall)
   return -(counter_score(wall) + (int)(opt_arr_addition(wall)*counter_score(wall)/DIVISOR));
 }
 
-int* calculate_draw (const Game::wall_type& wall, int i)
+int* calculate_draw (const Game::wall_type& wall, int brick_val)
 {
-  int brick_val = i;
   Game::wall_type temp_init = wall;
   temp_init[0][0]=brick_val;
-  int min_score = score(temp_init);
-  Game::wall_type temp = wall;
-  int min_j = 0;
-  int min_k = 0;
+  int max_score = score(temp_init);
+  
+  int max_j = 0;
+  int max_k = 0;
   for (int j = 0;j<wall.size();j++)
     {
       for (int k = 0; k<wall.size();k++)
 	{
-	  temp[i][j] = brick_val;
+	  Game::wall_type temp = wall;
+	  temp[j][k] = brick_val;
 	  int scr = score(temp);
-	  if (scr < min_score)
+	  if (scr > max_score)
 	    {
-	      min_score = scr;
-	      min_j = j;
-	      min_k = k;
+	      max_score = scr;
+	      max_j = j;
+	      max_k = k;
 	    }
 	}
     }
-  int* min_arr = new int[3]; 
-  min_arr[0] = min_j;
-  min_arr[1] = min_k;
-  min_arr[2] = min_score;
-  return min_arr;
+  int* max_arr = new int[3];
+  max_arr[0] = max_j;
+  max_arr[1] = max_k;
+  max_arr[2] = max_score;
+  return max_arr;
 }
 
 int calculate_random_draw (const Game::wall_type& wall)
@@ -278,12 +276,3 @@ int calculate_random_draw (const Game::wall_type& wall)
     }
   return (double) total_score/100.;
 }
-
-
-
-
-
-
-
-
-

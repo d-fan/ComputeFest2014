@@ -1,23 +1,111 @@
-***LOSE***
-***LOSE***
-***LOSE***
-***LOSE***
-***LOSE***
-***WIN***
-***LOSE***
-***WIN***
-***LOSE***
-***LOSE***
-***LOSE***
-***LOSE***
-***LOSE***
-***LOSE***
-***LOSE***
-***LOSE***
-***WIN***
-***LOSE***
-***LOSE***
-***LOSE***
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+END
+ERROR: Player could not be added to gamestring_for_bash
+END
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+END
+ERROR: Player could not be added to gamestring_for_bash
+END
+END
+END
+END
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+END
+ERROR: Player could not be added to gamestring_for_bash
+END
+END
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+END
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+END
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+END
+ERROR: Player could not be added to gamestring_for_bash
+END
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+END
+END
+ERROR: Player could not be added to gamestring_for_bash
+END
+ERROR: Player could not be added to gamestring_for_bash
+END
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+ERROR: Player could not be added to gamestring_for_bash
+END
+END
+END
+END
+END
+END
+END
+END
 END
 ERROR: Player could not be added to gamestring_for_bash
 ERROR: Player could not be added to gamestring_for_bash
@@ -25,86 +113,44 @@ ERROR: Player could not be added to gamestring_for_bash
 ERROR: Player could not be added to gamestring_for_bash
 ERROR: Player could not be added to gamestring_for_bash
 ERROR: Player could not be added to gamestring_for_bash
-END
-ERROR: Player could not be added to gamestring_for_bash
-***LOSE***
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
 ERROR: Player could not be added to gamestring_for_bash
 ERROR: Player could not be added to gamestring_for_bash
 ERROR: Player could not be added to gamestring_for_bash
 ERROR: Player could not be added to gamestring_for_bash
 ERROR: Player could not be added to gamestring_for_bash
 END
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
 END
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-ERROR: Player could not be added to gamestring_for_bash
-***WIN***
-***LOSE***
-***WIN***
-***LOSE***
-***WIN***
-***WIN***
-***LOSE***
-***WIN***
-***LOSE***
-***WIN***
-***LOSE***
-***LOSE***
-***LOSE***
-***LOSE***
-***LOSE***
-***WIN***
-***WIN***
-***LOSE***
-***WIN***
-***WIN***
-***WIN***
 END
-***LOSE***
+END
+END
+ERROR: Player could not be added to gamestring_for_bash_2
+ERROR: Player could not be added to gamestring_for_bash_2
+ERROR: Player could not be added to gamestring_for_bash_2
+ERROR: Player could not be added to gamestring_for_bash_2
+END
+END
+END
+END
+END
+END
+END
+END
+END
 ***WIN***
-***WIN***
-***WIN***
-***LOSE***
-***LOSE***
-***LOSE***
-***WIN***
-***LOSE***
-***WIN***
-***WIN***
-***WIN***
-***LOSE***
-***WIN***
-***LOSE***
-***LOSE***
-***WIN***
-***LOSE***
-***LOSE***
 ***LOSE***
 END
+ERROR: Player could not be added to gamestring_for_bash_2
+ERROR: Player could not be added to gamestring_for_bash_2
+ERROR: Player could not be added to gamestring_for_bash_2
+END
+END
+ERROR: Player could not be added to gamestring_for_bash_2
+END
+ERROR: Player could not be added to gamestring_for_bash_2
+END
+END
+ERROR: Player could not be added to gamestring_for_bash_2
+END
+ERROR: Player could not be added to gamestring_for_bash_2
+END
+ERROR: Player could not be added to gamestring_for_bash_2

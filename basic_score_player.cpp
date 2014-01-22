@@ -72,17 +72,15 @@ std::string choose_discard_or_pile(const Game::wall_type& wall,
   initialized = true;
 
   // Check if board score can be increased more than random with the discard
-  for (int i = 0; i < wall.size(); i++) {
-    for (int j = 0; j < wall.size(); j++) {
-      Game::wall_type temp = wall;
-      temp[i][j] = discard_brick;
-      if (score(temp) > calculate_random_draw(wall)) 
-	{
-        std::cout << "Better than random" << std::endl;
-        return "d";
-      }
+  int rand = calculate_random_draw (wall);
+  int max_if_discard = calculate_draw(wall,discard_brick)[2];
+  std::cout << "\n max if take discarded" << max_if_discard << "\nMax random" << rand  << std::endl;
+std::cout << "\nMy Wall (score " << score(wall) << "):" << std::endl;
+  if (max_if_discard >= rand)
+    {
+      std::cout << "Better than random" << std::endl;
+      return "d";
     }
-  }
   std::cout << "Worse than random. Drawing" << std::endl;
   return "p";
 }

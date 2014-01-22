@@ -207,7 +207,7 @@ int score4(const Game::wall_type& wall) {
       }
     }
   }
-  return counter;
+  return -counter;
 }
 
 

@@ -235,8 +235,32 @@ int combined_score (const Game::wall_type& wall, double divisor)
   return score(wall) + (int)(opt_arr_addition(wall)*score(wall)/divisor);
 }
 
-
-
+int calculate_random_draw (const Game::wall_type& wall)
+{
+  int total_score = 0;
+  for (int i = 0; i<99;i++)
+    {
+      int brick_val = i;
+      Game::wall_type temp_init = wall;
+      temp_init[0][0]=brick_val;
+      int min_score = score(temp_init);
+      Game::wall_type temp = wall;
+      for (int j = 0;j<wall.size();j++)
+	{
+	  for (int k = 0; k<wall.size();k++)
+	    {
+	      temp[i][j] = brick_val;
+	      int scr = score(temp);
+	      if (scr < min_score)
+		{
+		  min_score = scr;
+		}
+	    }
+	}
+      total_score += min_score;
+    }
+  return (double) total_score/100.;
+}
 
 
 

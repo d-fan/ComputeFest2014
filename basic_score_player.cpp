@@ -8,6 +8,8 @@
 
 #include <cmath>
 
+#define DIVISOR 100
+
 const double opt_arr[4][4] = {{0.0,9.9,26.4,48.5},
 			      {9.9,26.4,48.5,72.6},
 			      {26.4,48.5,72.6,89.1},
@@ -187,7 +189,7 @@ int score2(const Game::wall_type& wall) {
   return -score;
 }
 
-int score(const Game::wall_type& wall) {
+int counter_score(const Game::wall_type& wall) {
   int counter = 0;
   for(int i = 0; i < wall.size(); i++) {
     for(int j = 0; j < wall.size(); j++) {
@@ -198,7 +200,7 @@ int score(const Game::wall_type& wall) {
       }
     }
   }
-  return -counter;
+  return counter;
 }
 
 
@@ -230,13 +232,10 @@ double opt_arr_addition(const Game::wall_type& wall)
   return penalizer;
 }
 
-int combined_score (const Game::wall_type& wall, double divisor)
+int score(const Game::wall_type& wall)
 {
-  return score(wall) + (int)(opt_arr_addition(wall)*score(wall)/divisor);
+  return -(counter_score(wall) + (int)(opt_arr_addition(wall)*counter_score(wall)/DIVISOR));
 }
-
-
-
 
 
 

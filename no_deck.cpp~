@@ -2,46 +2,53 @@
 #include <string>
 #include <vector>
 #include <climits>   
-
 #include "PlayerGame.hpp"
-
 #include <cmath>
-
 int divisor;
-
 #define LOGISTIC_FLATTEN 2.
 #define LOGISTIC_SHIFT  12.
-
+bool quiet = false;
 const double opt_arr[4][4] = {{99.0,89.1,72.6,48.5},
-				                      {89.1,72.6,48.5,26.4},
-				                      {72.6,48.5,26.4, 9.9},
-				                      {48.5,26.4, 9.9, 0.0}};
+			      {89.1,72.6,48.5,26.4},
+			      {72.6,48.5,26.4, 9.9},
+			      {48.5,26.4, 9.9, 0.0}};
 
 Game::wall_type lwall;
 bool initialized = false;
 double score(const Game::wall_type& wall);
 double opt_arr_addition(const Game::wall_type& wall);
 int counter_score(const Game::wall_type& wall);
-bool quiet = false;
+double* calculate_draw (const Game::wall_type& wall, int i);
+double calculate_random_draw (const Game::wall_type& wall);
 
 /** Pretty print a game wall */
 void print_wall(const Game::wall_type& s, bool highlight = false)
 {
-  for (int i = s.size()-1; i >= 0; --i) {
+  printf("  ||");
+  for (unsigned i = 0; i < s[0].size(); ++i) printf(" %2d |", i);
+  printf("|\n%s\n", std::string(4+5*s[0].size()+1,'=').c_str());
+  for (unsigned i = s.size()-1; i > 0; --i) {
+    printf("%c ||", 'A' + i);
     int prev = -1;
-    for (int j = 0; j < s.size(); ++j) {
+    for (unsigned j = 0; j < s[i].size(); ++j) {
       if(highlight && s[i][j] != lwall[i][j]) {
-        printf("\033[1;31m%2d\033[0m  ", s[i][j]);
+        printf(" \033[1;31m%2d\033[0m |", s[i][j]);
         prev = lwall[i][j];
       } else {
-        printf("%2d  ", s[i][j]);
+        printf(" %2d |", s[i][j]);
       }
     }
     if (prev == -1)
-      printf("\n");
+      printf("|\n");
     else
-      printf("  %d\n", prev);
+      printf("| %d\n", prev);
+    printf("--||");
+    for (unsigned j = 0; j < s[i].size(); ++j) printf("----|");
+    printf("|\n");
   }
+  printf("%c ||", 'A');
+  for (unsigned j = 0; j < s[0].size(); ++j) printf(" %2d |", s[0][j]);
+  printf("|\n%s\n", std::string(4+5*s[0].size()+1,'=').c_str());
 }
 
 /** Choose the known brick in the discard or a unknown brick in the pile.
@@ -68,18 +75,17 @@ std::string choose_discard_or_pile(const Game::wall_type& wall,
     //initialized = true;
   }
 
-  // Check if board score can be increased with discard_brick
-  for (int i = 0; i < wall.size(); i++) {
-    for (int j = 0; j < wall.size(); j++) {
-      Game::wall_type temp = wall;
-      temp[i][j] = discard_brick;
-      if(score(temp) > score(wall)) {
-        std::cout << "Found improvement" << std::endl;
-        return "d";
-      }
+  // Check if board score can be increased more than random with the discard
+  double rand = calculate_random_draw (wall);
+  double max_if_discard = calculate_draw(wall,discard_brick)[2];
+  std::cout << "\n max if take discarded" << max_if_discard << "\nMax random" << rand  << std::endl;
+  std::cout << "\nMy Wall (score " << score(wall) << "):" << std::endl;
+  if (max_if_discard >= rand)
+    {
+      std::cout << "Better than random" << std::endl;
+      return "d";
     }
-  }
-  std::cout << "Found no improvement. Drawing" << std::endl;
+  std::cout << "Worse than random. Drawing" << std::endl;
   return "p";
 }
 
@@ -102,29 +108,20 @@ std::string choose_coord(const Game::wall_type& wall,
                          const Game::wall_type& owall,
                          int brick)
 {
-  // Best coordinates found so far
-  int best[2] = {-1,-1};
-  // Best score found so far
-  double best_score = -1000000000000;
-  // Iterate through every cell
-  for(int i = 0; i < wall.size(); i++) {
-    for(int j = 0; j < wall.size(); j++) {
-      // Create temporary wall with a change at (i,j)
-      Game::wall_type temp = wall;
-      temp[i][j] = brick;
-      // Compare score of board with change to score of current board
-      double temp_score = score(temp);
-      if (temp_score > best_score) {
-        best[0] = i;
-        best[1] = j;
-        best_score = temp_score;
-      }
+  double* min_info = calculate_draw(wall, brick);
+  int fst = (int) min_info[0];
+  int snd = (int) min_info[1];
+  Game::wall_type temp = wall;
+  temp[fst][snd] = brick;
+  if (score(wall) >= score(temp))
+    {
+      return "bad_brick";
     }
-  }
-  // Make no move if there is no improvement
-  if (best[0] < 0 || best[1] < 0) return "-1";
-  std::cout << "Replacing " << wall[best[0]][best[1]] << " at " << char('A' + best[0]) << best[1] << " with " << brick << std::endl;
-  return rowcol2coord(best[0], best[1]);
+  else
+    {
+        std::cout << "Replacing " << wall[fst][snd] << " at " << char('A' + fst) << snd << " with " << brick << std::endl;
+  return rowcol2coord(fst, snd);
+    }
 }
 
 
@@ -163,6 +160,8 @@ int main(int argc, char** argv)
   return 0;
 }
 
+
+
 int counter_score(const Game::wall_type& wall) {
   int counter = 0;
   for(int i = 0; i < wall.size(); i++) {
@@ -177,16 +176,18 @@ int counter_score(const Game::wall_type& wall) {
   return counter;
 }
 
+
+
 double opt_arr_addition(const Game::wall_type& wall)
 {
-  double penalizer = 0.0;
-  for(int i = 0; i < wall.size();i++)
-  {
-    for(int j = 0; j < wall.size();j++)
-	  {
-	    penalizer += abs((double)wall[i][j]-opt_arr[i][j]);
-	  }
-  }
+  double penalizer = 0;
+  for(int i = 0;i<wall.size();i++)
+    {
+      for(int j=0;j<wall.size();j++)
+	{
+	  penalizer += max(20,abs(wall[i][j] - opt_arr[i][j]));
+	}
+    }
   return penalizer;
 }
 
@@ -197,4 +198,44 @@ double score(const Game::wall_type& wall)
   double logistic_mult = 1. / (std::exp(-counter / LOGISTIC_FLATTEN + LOGISTIC_SHIFT) + 1);
   //return -(counter + (int)(opt_arr_addition(wall)*counter*counter/divisor));
   return -(counter * (1-logistic_mult) + (opt_arr_addition(wall) * (logistic_mult) / divisor));
+}
+
+double* calculate_draw (const Game::wall_type& wall, int brick_val)
+{
+  Game::wall_type temp_init = wall;
+  temp_init[0][0]=brick_val;
+  double max_score = score(temp_init);
+  
+  int max_j = 0;
+  int max_k = 0;
+  for (int j = 0;j<wall.size();j++)
+    {
+      for (int k = 0; k<wall.size();k++)
+	{
+	  Game::wall_type temp = wall;
+	  temp[j][k] = brick_val;
+	  double scr = score(temp);
+	  if (scr > max_score)
+	    {
+	      max_score = scr;
+	      max_j = j;
+	      max_k = k;
+	    }
+	}
+    }
+  double* max_arr = new double[3];
+  max_arr[0] = max_j;
+  max_arr[1] = max_k;
+  max_arr[2] = max_score;
+  return max_arr;
+}
+
+double calculate_random_draw (const Game::wall_type& wall)
+{
+  double total_score = 0.;
+  for (int i = 0; i<99;i++)
+    {
+      total_score += calculate_draw (wall, i)[2];
+    }
+  return total_score/100.;
 }

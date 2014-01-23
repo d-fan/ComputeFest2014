@@ -8,14 +8,16 @@ int divisor;
 #define LOGISTIC_FLATTEN 2.
 #define LOGISTIC_SHIFT  12.
 bool quiet = false;
-const double opt_arr[4][4] = {{0.0,9.9,26.4,48.5},
-			      {9.9,26.4,48.5,72.6},
-			      {26.4,48.5,72.6,89.1},
-			      {48.5,72.6,89.1,99.0}};
+const double opt_arr[4][4] = {{99.0,89.1,72.6,48.5},
+			      {89.1,72.6,48.5,26.4},
+			      {72.6,48.5,26.4, 9.9},
+			      {48.5,26.4, 9.9, 0.0}};
 
 Game::wall_type lwall;
 bool initialized = false;
 double score(const Game::wall_type& wall);
+double opt_arr_addition(const Game::wall_type& wall);
+int counter_score(const Game::wall_type& wall);
 double* calculate_draw (const Game::wall_type& wall, int i);
 double calculate_random_draw (const Game::wall_type& wall);
 
@@ -62,18 +64,22 @@ std::string choose_discard_or_pile(const Game::wall_type& wall,
                                 const Game::wall_type& owall,
                                 int discard_brick)
 {
-  std::cout << "\nOpponent (score " << score(owall) << "):" << std::endl;
-  print_wall(owall, initialized);
-  std::cout << "\nMy Wall (score " << score(wall) << "):" << std::endl;
-  print_wall(wall);
-  lwall = owall;
-  initialized = true;
+  if (!quiet) {
+    std::cout << "\nOpponent (counter " << counter_score(owall) 
+              << ", optimal " << opt_arr_addition(owall) << ", score " << score(owall) << "):" << std::endl;
+    print_wall(owall, initialized);
+    std::cout << "\nMy Wall (counter " << counter_score(wall) 
+              << ", optimal " << opt_arr_addition(wall) << ", score " << score(wall) << "):" << std::endl;
+    print_wall(wall);
+    //lwall = owall;
+    //initialized = true;
+  }
 
   // Check if board score can be increased more than random with the discard
   double rand = calculate_random_draw (wall);
   double max_if_discard = calculate_draw(wall,discard_brick)[2];
   std::cout << "\n max if take discarded" << max_if_discard << "\nMax random" << rand  << std::endl;
-std::cout << "\nMy Wall (score " << score(wall) << "):" << std::endl;
+  std::cout << "\nMy Wall (score " << score(wall) << "):" << std::endl;
   if (max_if_discard >= rand)
     {
       std::cout << "Better than random" << std::endl;
@@ -175,7 +181,7 @@ int counter_score(const Game::wall_type& wall) {
 double opt_arr_addition(const Game::wall_type& wall)
 {
   double penalizer = 0;
-  for(int i = 0;i>wall.size();i++)
+  for(int i = 0;i<wall.size();i++)
     {
       for(int j=0;j<wall.size();j++)
 	{
@@ -193,6 +199,7 @@ double score(const Game::wall_type& wall)
   //return -(counter + (int)(opt_arr_addition(wall)*counter*counter/divisor));
   return -(counter * (1-logistic_mult) + (opt_arr_addition(wall) * (logistic_mult) / divisor));
 }
+
 double* calculate_draw (const Game::wall_type& wall, int brick_val)
 {
   Game::wall_type temp_init = wall;
@@ -232,42 +239,3 @@ double calculate_random_draw (const Game::wall_type& wall)
     }
   return total_score/100.;
 }
-
-/*
-int score3(const Game::wall_type& wall) {
-  // Count how many elements are in order
-  int ordered = 0;
-  for(int i = 0; i < wall.size(); i++) {
-    for(int j = 0; j < wall.size(); j++) {
-      if (wall[i][j] > wall[i+1][j]) ordered++;
-      if (wall[i][j] > wall[i][j+1]) ordered++;
-    }
-  }
-  return ordered;
-}
-
-int score2(const Game::wall_type& wall) {
-  int score = 0;
-  for(int i = 0; i < wall.size(); i++) {
-    for(int j = 0; j < wall.size(); j++) {
-      if (j < wall.size() - 1) score += wall[i][j] > wall[i][j+1] ? wall[i][j] - wall[i][j+1] : 99;
-      if (i < wall.size() - 1) score += wall[i][j] > wall[i+1][j] ? wall[i][j] - wall[i+1][j] : 99;
-    }
-  }
-  return -score;
-}
-
-int score4(const Game::wall_type& wall) {
-  int counter = 0;
-  for(int i = 0; i < wall.size(); i++) {
-    for(int j = 0; j < wall.size(); j++) {
-      for(int m = i; m < wall.size(); m++) {
-        for(int n = j; n < wall.size(); n++) {
-          if(wall[m][n] > wall[i][j]) counter += wall[i][j] - wall[m][n];
-        }
-      }
-    }
-  }
-  return -counter;
-}
-*/

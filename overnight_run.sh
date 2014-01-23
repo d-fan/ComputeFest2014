@@ -1,4 +1,4 @@
-for ((s = 11; s <= 12; s = s + 1)); do
+for ((s = 5; s <= 6; s = s + 1)); do
   for ((h = 5; h <= 15; h = h + 2)); do
     for ((d = 6; d <= 10; d = d + 2)); do
       rm temp.out

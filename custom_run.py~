@@ -29,9 +29,9 @@ def run_game(command, name, player_num):
 # Start the games
 for game_num in xrange(1, num_runs + 1):
 	print("Starting game " + game_name + str(game_num) + ": " + player1 + " vs. " + player2)
-	t1 = threading.Thread(target = run_game, args = ("./" + player1 + " " + game_name + str(game_num), game_name+str(game_num), 0))
+	t1 = threading.Thread(target = run_game, args = ("./" + player1 + " " + game_name + str(game_num), game_name + str(game_num), 0))
 	t1.start()
-	t2 = threading.Thread(target = run_game, args = ("./" + player2 + " " + game_name + str(game_num), game_name+str(game_num), 1))
+	t2 = threading.Thread(target = run_game, args = ("./" + player2 + " " + game_name + str(game_num), game_name + str(game_num), 1))
 	t2.start()
 	players.append((t1,t2,game_name + str(game_num)))
 

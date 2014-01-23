@@ -21,7 +21,7 @@ def run_game(command, name, player_num):
 	#print("Running: " + command[0])
 	result = subprocess.check_output(command.split(' '))
 	win_lose = result[-8:-4]
-	if(player_num == 1):
+	if(player_num == 0):
 		print("Ending game   " + name + ": " + win_lose)
 	if(win_lose == "*WIN"):
 		results[player_num] += 1

@@ -106,6 +106,7 @@ std::string choose_coord(const Game::wall_type& wall,
   int best[2] = {-1,-1};
   // Best score found so far
   double best_score = -1000000000000;
+  std::cout << "  Candidate moves" << std::endl;
   // Iterate through every cell
   for(int i = 0; i < wall.size(); i++) {
     for(int j = 0; j < wall.size(); j++) {
@@ -114,6 +115,7 @@ std::string choose_coord(const Game::wall_type& wall,
       temp[i][j] = brick;
       // Compare score of board with change to score of current board
       double temp_score = score(temp);
+      std::cout << "  " << rowcol2coord(i, j) << ": " << temp_score << std::endl;
       if (temp_score > best_score) {
         best[0] = i;
         best[1] = j;
@@ -124,6 +126,8 @@ std::string choose_coord(const Game::wall_type& wall,
   // Make no move if there is no improvement
   if (best[0] < 0 || best[1] < 0) return "-1";
   std::cout << "Replacing " << wall[best[0]][best[1]] << " at " << char('A' + best[0]) << best[1] << " with " << brick << std::endl;
+
+
   return rowcol2coord(best[0], best[1]);
 }
 
@@ -184,7 +188,9 @@ double opt_arr_addition(const Game::wall_type& wall)
   {
     for(int j = 0; j < wall.size();j++)
 	  {
-	    penalizer += abs((double)wall[i][j]-opt_arr[i][j]);
+	    int penalty = abs((double)wall[i][j]-opt_arr[i][j]);
+      penalty = penalty > 20 ? 20 : penalty;
+      penalizer += penalty;
 	  }
   }
   return penalizer;

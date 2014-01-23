@@ -18,7 +18,7 @@ bool initialized = false;
 /** Pretty print a game wall */
 void print_wall(const Game::wall_type& s, bool highlight = false)
 {
-  p.rintf("  ||");
+  printf("  ||");
   for (unsigned i = 0; i < s[0].size(); ++i) printf(" %2d |", i);
   printf("|\n%s\n", std::string(4+5*s[0].size()+1,'=').c_str());
   for (unsigned i = s.size()-1; i > 0; --i) {

@@ -18,8 +18,9 @@ bool initialized = false;
 double score(const Game::wall_type& wall);
 double opt_arr_addition(const Game::wall_type& wall);
 int counter_score(const Game::wall_type& wall);
-double* calculate_draw (const Game::wall_type& wall, int i);
+double* calculate_draw (const Game::wall_type& wall, int i, bool out = false);
 double calculate_random_draw (const Game::wall_type& wall);
+int turn_number = 0;
 
 bool deck[100] = {true};
 
@@ -87,12 +88,13 @@ std::string choose_discard_or_pile(const Game::wall_type& wall,
 
   // Check if board score can be increased more than random with the discard
   double rand = calculate_random_draw (wall);
-  double max_if_discard = calculate_draw(wall,discard_brick)[2];
-  std::cout << "\n max if take discarded" << max_if_discard << "\nMax random" << rand  << std::endl;
-  std::cout << "\nMy Wall (score " << score(wall) << "):" << std::endl;
+  double max_if_discard = calculate_draw(wall,discard_brick,true)[2];
+  std::cout << "\n  Max if take discarded" << max_if_discard << std::endl;
+  std::cout << "  Max random" << rand << std::endl;
+  std::cout << "  My Wall (score " << score(wall) << "):" << std::endl;
   if (max_if_discard >= rand)
     {
-      std::cout << "Better than random" << std::endl;
+      std::cout << "  Better than random" << std::endl;
       return "d";
     }
   std::cout << "Worse than random. Drawing" << std::endl;
@@ -120,7 +122,7 @@ std::string choose_coord(const Game::wall_type& wall,
 {
   deck[brick] = false;
 
-  double* min_info = calculate_draw(wall, brick);
+  double* min_info = calculate_draw(wall, brick, true);
   int fst = (int) min_info[0];
   int snd = (int) min_info[1];
   Game::wall_type temp = wall;
@@ -146,7 +148,7 @@ int main(int argc, char** argv)
     exit(0);
   }
 
-  divisor = 7.;
+  divisor = 8.;
   logistic_flatten = 2.;
   logistic_shift = 12.;
 
@@ -161,10 +163,16 @@ int main(int argc, char** argv)
   }
   quiet = false;
 
+  for (int i = 0; i < 99; i++) {
+    deck[i] = true;
+  }
+
   // Connect to a FoosGame with id from the command line
   Game game(argv[argc-1]);
 
   while (true) {
+    std::cout << "Turn number " << turn_number++ << std::endl;
+
     // On our turn, we get the brick on the pile
     int pile = game.get_discard();
 
@@ -224,13 +232,13 @@ double score(const Game::wall_type& wall)
   return -(counter * (1-logistic_mult) + (opt_arr_addition(wall) * (logistic_mult) / divisor));
 }
 
-double* calculate_draw (const Game::wall_type& wall, int brick_val)
+double* calculate_draw (const Game::wall_type& wall, int brick_val, bool out)
 {
   Game::wall_type temp_init = wall;
   temp_init[0][0]=brick_val;
   double max_score = score(temp_init);
   
-  //std::cout << "  Candidate moves" << std::endl;
+  if (out) std::cout << "  Candidate moves (" << brick_val << ")" << std::endl;
 
   int max_j = 0;
   int max_k = 0;
@@ -238,10 +246,13 @@ double* calculate_draw (const Game::wall_type& wall, int brick_val)
   {
     for (int k = 0; k < wall.size(); k++)
 	  {
+      if (brick_val < (wall.size()-j-1) * (wall.size()-k-1) ||
+          brick_val > 100 - (j+1) * (k+1))
+        continue;
 	    Game::wall_type temp = wall;
 	    temp[j][k] = brick_val;
 	    double scr = score(temp);
-      //std::cout << "  " << rowcol2coord(j,k) << ": " << scr << std::endl;
+      if (out) std::cout << "  " << rowcol2coord(j,k) << ": " << scr << std::endl;
 	    if (scr > max_score)
 	    {
 	      max_score = scr;
@@ -268,5 +279,6 @@ double calculate_random_draw (const Game::wall_type& wall)
       deck_size++;
     }
   }
+  std::cout << "deck size " << deck_size << std::endl;
   return total_score/deck_size;
 }

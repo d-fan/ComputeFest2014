@@ -4,9 +4,9 @@
 #include <climits>   
 #include "PlayerGame.hpp"
 #include <cmath>
-int divisor;
-#define LOGISTIC_FLATTEN 2.
-#define LOGISTIC_SHIFT  12.
+double divisor;
+double logistic_flatten;
+double logistic_shift;
 bool quiet = false;
 const double opt_arr[4][4] = {{99.0,89.1,72.6,48.5},
 			      {89.1,72.6,48.5,26.4},
@@ -20,6 +20,8 @@ double opt_arr_addition(const Game::wall_type& wall);
 int counter_score(const Game::wall_type& wall);
 double* calculate_draw (const Game::wall_type& wall, int i);
 double calculate_random_draw (const Game::wall_type& wall);
+
+bool deck[100] = {true};
 
 /** Pretty print a game wall */
 void print_wall(const Game::wall_type& s, bool highlight = false)
@@ -64,6 +66,14 @@ std::string choose_discard_or_pile(const Game::wall_type& wall,
                                 const Game::wall_type& owall,
                                 int discard_brick)
 {
+  for(int i = 0; i < wall.size(); i++) {
+    for(int j = 0; j < wall.size(); j++) {
+      deck[wall[i][j]] = false;
+      deck[owall[i][j]] = false;
+    }
+  }
+  deck[discard_brick] = false;
+
   if (!quiet) {
     std::cout << "\nOpponent (counter " << counter_score(owall) 
               << ", optimal " << opt_arr_addition(owall) << ", score " << score(owall) << "):" << std::endl;
@@ -108,6 +118,8 @@ std::string choose_coord(const Game::wall_type& wall,
                          const Game::wall_type& owall,
                          int brick)
 {
+  deck[brick] = false;
+
   double* min_info = calculate_draw(wall, brick);
   int fst = (int) min_info[0];
   int snd = (int) min_info[1];
@@ -127,18 +139,30 @@ std::string choose_coord(const Game::wall_type& wall,
 
 int main(int argc, char** argv)
 {
-  if (argc < 3) {
+  if (argc < 2) {
     std::cout << "Usage: " << argv[0] << " divisor GAMEID [-q]" << std::endl;
     std::cout << "\tGAMEID = 0     creates a new game" << std::endl;
     std::cout << "\tGAMEID = WXYZ  connect to a specific game" << std::endl;
     exit(0);
   }
 
-  divisor = atoi(argv[1]);
-  quiet = argc > 3 && argv[3][0] == '-' && argv[3][1] == 'q';
+  divisor = 7.;
+  logistic_flatten = 2.;
+  logistic_shift = 12.;
+
+  switch (argc)
+  {
+    case 5:
+      logistic_flatten = atof(argv[3]);
+    case 4:
+      logistic_shift = atof(argv[2]);
+    case 3:
+      divisor = atof(argv[1]);
+  }
+  quiet = false;
 
   // Connect to a FoosGame with id from the command line
-  Game game(argv[2]);
+  Game game(argv[argc-1]);
 
   while (true) {
     // On our turn, we get the brick on the pile
@@ -185,7 +209,7 @@ double opt_arr_addition(const Game::wall_type& wall)
     {
       for(int j=0;j<wall.size();j++)
 	{
-	  penalizer += max(20,abs(wall[i][j] - opt_arr[i][j]));
+	  penalizer += std::max(20,abs(wall[i][j] - opt_arr[i][j]));
 	}
     }
   return penalizer;
@@ -195,7 +219,7 @@ double score(const Game::wall_type& wall)
 {
   //return -opt_arr_addition(wall);
   int counter = counter_score(wall);
-  double logistic_mult = 1. / (std::exp(-counter / LOGISTIC_FLATTEN + LOGISTIC_SHIFT) + 1);
+  double logistic_mult = 1. / (std::exp(-counter / logistic_flatten + logistic_shift) + 1);
   //return -(counter + (int)(opt_arr_addition(wall)*counter*counter/divisor));
   return -(counter * (1-logistic_mult) + (opt_arr_addition(wall) * (logistic_mult) / divisor));
 }
@@ -206,23 +230,26 @@ double* calculate_draw (const Game::wall_type& wall, int brick_val)
   temp_init[0][0]=brick_val;
   double max_score = score(temp_init);
   
+  //std::cout << "  Candidate moves" << std::endl;
+
   int max_j = 0;
   int max_k = 0;
-  for (int j = 0;j<wall.size();j++)
-    {
-      for (int k = 0; k<wall.size();k++)
-	{
-	  Game::wall_type temp = wall;
-	  temp[j][k] = brick_val;
-	  double scr = score(temp);
-	  if (scr > max_score)
+  for (int j = 0; j < wall.size(); j++)
+  {
+    for (int k = 0; k < wall.size(); k++)
+	  {
+	    Game::wall_type temp = wall;
+	    temp[j][k] = brick_val;
+	    double scr = score(temp);
+      //std::cout << "  " << rowcol2coord(j,k) << ": " << scr << std::endl;
+	    if (scr > max_score)
 	    {
 	      max_score = scr;
 	      max_j = j;
 	      max_k = k;
-	    }
-	}
-    }
+	    } 
+	  }
+  }
   double* max_arr = new double[3];
   max_arr[0] = max_j;
   max_arr[1] = max_k;
@@ -233,9 +260,13 @@ double* calculate_draw (const Game::wall_type& wall, int brick_val)
 double calculate_random_draw (const Game::wall_type& wall)
 {
   double total_score = 0.;
+  int deck_size = 0;
   for (int i = 0; i<99;i++)
-    {
+  {
+    if (deck[i]) {
       total_score += calculate_draw (wall, i)[2];
+      deck_size++;
     }
-  return total_score/100.;
+  }
+  return total_score/deck_size;
 }

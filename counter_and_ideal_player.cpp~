@@ -55,9 +55,9 @@ std::string choose_discard_or_pile(const Game::wall_type& wall,
                                 int discard_brick)
 {
   if (!quiet) {
-    //std::cout << "\nOpponent (counter " << counter_score(owall) 
-    //          << ", optimal " << opt_arr_addition(owall) << ", score " << score(owall) << "):" << std::endl;
-    //print_wall(owall, initialized);
+    std::cout << "\nOpponent (counter " << counter_score(owall) 
+              << ", optimal " << opt_arr_addition(owall) << ", score " << score(owall) << "):" << std::endl;
+    print_wall(owall, initialized);
     std::cout << "\nMy Wall (counter " << counter_score(wall) 
               << ", optimal " << opt_arr_addition(wall) << ", score " << score(wall) << "):" << std::endl;
     print_wall(wall);

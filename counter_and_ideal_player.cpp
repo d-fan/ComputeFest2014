@@ -9,6 +9,9 @@
 
 int divisor;
 
+#define LOGISTIC_FLATTEN 2.
+#define LOGISTIC_SHIFT  12.
+
 const double opt_arr[4][4] = {{99.0,89.1,72.6,48.5},
 				                      {89.1,72.6,48.5,26.4},
 				                      {72.6,48.5,26.4, 9.9},
@@ -191,7 +194,7 @@ double score(const Game::wall_type& wall)
 {
   //return -opt_arr_addition(wall);
   int counter = counter_score(wall);
-  double logistic_mult = 1. / (std::exp(-counter / 2. + 12) + 1);
+  double logistic_mult = 1. / (std::exp(-counter / LOGISTIC_FLATTEN + LOGISTIC_SHIFT) + 1);
   //return -(counter + (int)(opt_arr_addition(wall)*counter*counter/divisor));
   return -(counter * (1-logistic_mult) + (opt_arr_addition(wall) * (logistic_mult) / divisor));
 }

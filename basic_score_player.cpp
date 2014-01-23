@@ -153,9 +153,9 @@ int main(int argc, char** argv)
   switch (argc)
   {
     case 5:
-      logistic_shift = atof(argv[3]);
+      logistic_flatten = atof(argv[3]);
     case 4:
-      logistic_flatten = atof(argv[2]);
+      logistic_shift = atof(argv[2]);
     case 3:
       divisor = atof(argv[1]);
   }

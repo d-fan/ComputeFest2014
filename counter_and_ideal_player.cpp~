@@ -115,7 +115,7 @@ std::string choose_coord(const Game::wall_type& wall,
       temp[i][j] = brick;
       // Compare score of board with change to score of current board
       double temp_score = score(temp);
-      std::cout << "  " << rowcol2coord(best[0], best[1]) << ": " << temp_score << std::endl;
+      std::cout << "  " << rowcol2coord(i, j) << ": " << temp_score << std::endl;
       if (temp_score > best_score) {
         best[0] = i;
         best[1] = j;

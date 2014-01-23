@@ -80,8 +80,8 @@ class Game {
     comm = socket(AF_INET, SOCK_STREAM, 0);
     memset(buffer, 0, MAX_MESSAGE_LENGTH);
 
-    //hostent* server = gethostbyname("crisco.seas.harvard.edu");
-    hostent* server = gethostbyname("localhost");
+    hostent* server = gethostbyname("crisco.seas.harvard.edu");
+    //hostent* server = gethostbyname("localhost");
     if (server == NULL)
       std::cout << "No such host!" << std::endl;;
 

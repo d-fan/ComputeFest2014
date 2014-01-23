@@ -150,7 +150,7 @@ int main(int argc, char** argv)
 
   divisor = 8.;
   logistic_flatten = 2.;
-  logistic_shift = 12.;
+  logistic_shift = 11.;
 
   switch (argc)
   {

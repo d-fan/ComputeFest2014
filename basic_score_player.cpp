@@ -185,7 +185,7 @@ double opt_arr_addition(const Game::wall_type& wall)
     {
       for(int j=0;j<wall.size();j++)
 	{
-	  penalizer += abs(wall[i][j] - opt_arr[i][j]);
+	  penalizer += max(20,abs(wall[i][j] - opt_arr[i][j]));
 	}
     }
   return penalizer;
